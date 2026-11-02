@@ -1,0 +1,287 @@
+:root {
+  --paper: #f1f0eb;
+  --ink: #101010;
+  --accent: #7441e8;
+  --muted: #62615b;
+  --rule: #1010102e;
+  --gutter: clamp(24px, 4.4vw, 88px);
+  --mono: 'Courier New', monospace;
+  --focus: #7441e8;
+  color-scheme: light;
+}
+* {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 108px;
+}
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-archivo), Arial, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+button,
+input {
+  font-family: inherit;
+}
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+button {
+  border-radius: 0;
+}
+button:not(:disabled),
+summary {
+  touch-action: manipulation;
+}
+button:disabled {
+  cursor: not-allowed;
+}
+::selection {
+  background: var(--accent);
+  color: #fff;
+}
+:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 6px;
+}
+section:focus,
+main:focus {
+  outline: none;
+}
+section {
+  scroll-margin-top: 0;
+}
+.section-label {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  font: 12px var(--mono);
+  letter-spacing: 0.065em;
+  padding-bottom: 24px;
+  line-height: 1.5;
+}
+.section-label::after {
+  content: '';
+  position: absolute;
+  inset: auto 0 0;
+  height: 1px;
+  background: var(--rule);
+  transform: scaleX(var(--rule-scale, 1));
+  transform-origin: left;
+}
+.heading-mask {
+  display: block;
+  overflow: clip;
+  padding-block: 0.12em;
+  margin-block: -0.12em;
+}
+[data-heading-line] {
+  display: block;
+}
+[data-hover-word] {
+  transition: color 0.25s;
+}
+.scroll-progress {
+  position: fixed;
+  top: 88px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  z-index: 45;
+  pointer-events: none;
+}
+@media (hover: hover) {
+  [data-hover-word]:hover {
+    color: var(--accent) !important;
+  }
+  .text-link:hover {
+    color: var(--accent);
+  }
+}
+.micro {
+  font: 12px var(--mono);
+  letter-spacing: 0.045em;
+  text-transform: uppercase;
+}
+.text-link {
+  display: inline-flex;
+  gap: 30px;
+  align-items: center;
+  min-height: 44px;
+  font-size: 16px;
+  border-bottom: 1px solid currentColor;
+}
+.text-link svg {
+  width: 18px;
+}
+.marker {
+  color: var(--marker-text, var(--ink));
+  padding: 0.04em 0.16em 0.09em;
+  margin-inline: -0.04em;
+  font-weight: 600;
+  background: linear-gradient(
+    178deg,
+    transparent 11%,
+    #7441e847 14%,
+    #7441e85c 79%,
+    #7441e830 85%,
+    transparent 89%
+  );
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+.action-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 17px 22px;
+  min-height: 56px;
+  max-width: 100%;
+  margin-bottom: 28px;
+  border: 1px solid var(--accent);
+  background: var(--accent);
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.4;
+  transition:
+    background 0.2s,
+    border-color 0.2s;
+}
+.action-link svg {
+  flex-shrink: 0;
+  transition: transform 0.2s;
+}
+.action-link:hover,
+.action-link:focus-visible {
+  background: var(--ink);
+  border-color: var(--ink);
+}
+.action-link:hover svg {
+  transform: translate(3px, -3px);
+}
+.skip-link {
+  position: fixed;
+  z-index: 100;
+  top: 12px;
+  left: 12px;
+  background: var(--ink);
+  color: var(--paper);
+  padding: 16px 22px;
+  transform: translateY(-150%);
+}
+.skip-link:focus {
+  transform: translateY(0);
+}
+.project-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 82px;
+  height: 82px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #fff;
+  display: grid;
+  place-content: center;
+  text-align: center;
+  font: 12px/1.6 var(--mono);
+  z-index: 60;
+  pointer-events: none;
+  opacity: 0;
+  margin: -41px 0 0 -41px;
+  transition: opacity 0.2s;
+}
+.project-cursor[data-visible='true'] {
+  opacity: 1;
+}
+@media (min-width: 1920px) {
+  body {
+    max-width: 2200px;
+    margin: auto;
+  }
+}
+:root:has([data-reduced-motion='true']) {
+  scroll-behavior: auto !important;
+}
+[data-reduced-motion='true'] *,
+[data-reduced-motion='true'] *:before,
+[data-reduced-motion='true'] *:after {
+  animation-duration: 0.01ms !important;
+  transition-duration: 0.01ms !important;
+}
+[data-reduced-motion='true'] .project-cursor {
+  display: none;
+}
+[data-reduced-motion='true'] .scroll-progress {
+  display: none;
+}
+@media (max-width: 760px) {
+  .scroll-progress {
+    top: 72px;
+  }
+  html {
+    scroll-padding-top: 90px;
+  }
+  .section-label {
+    font-size: 12px;
+    padding-bottom: 20px;
+    letter-spacing: 0.02em;
+  }
+  .section-label > span:last-child {
+    max-width: 125px;
+    text-align: right;
+  }
+  .project-cursor {
+    display: none;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *:before,
+  *:after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .project-cursor {
+    display: none;
+  }
+}
+/* Hand-drawn ink, layered like two imperfect marker strokes; cloned on wraps. */
+.marker-scribble {
+  padding: 0.02em 0.13em 0.07em;
+  background-color: transparent;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 240 40' preserveAspectRatio='none'%3E%3Cpath d='M4 15L234 10 230 30 7 33Z' fill='%237441e8' fill-opacity='.45'/%3E%3Cpath d='M9 12Q106 19 236 13M3 26Q122 20 230 26' fill='none' stroke='%237441e8' stroke-opacity='.3' stroke-width='9' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+@media (hover: hover) {
+  [data-hover-word]:hover {
+    color: inherit !important;
+    text-decoration: underline;
+    text-decoration-thickness: 0.025em;
+    text-underline-offset: 0.1em;
+  }
+  .text-link:hover {
+    color: inherit;
+  }
+}

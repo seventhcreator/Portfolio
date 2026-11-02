@@ -1,0 +1,308 @@
+.workflow {
+  margin: 0 0 64px;
+  border-top: 1px solid var(--rule);
+  padding-top: 32px;
+}
+.heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 40px;
+  margin-bottom: 38px;
+}
+.heading h3 {
+  font-size: clamp(28px, 3vw, 44px);
+  line-height: 1.05;
+  letter-spacing: -0.055em;
+  font-weight: 650;
+  margin: 17px 0 0;
+}
+.heading p {
+  color: var(--muted);
+  font-size: 16px;
+  line-height: 1.7;
+  max-width: 300px;
+  margin: 0;
+}
+.stage {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 280px) 240px minmax(0, 280px);
+  justify-content: center;
+  align-items: center;
+  column-gap: clamp(40px, 7vw, 110px);
+  padding: 16px 0;
+  max-width: 1040px;
+  margin: auto;
+}
+.clients,
+.teams {
+  position: relative;
+  display: grid;
+  gap: 10px;
+  z-index: 1;
+}
+.columnLabel {
+  font: 12px/1.5 var(--mono);
+  letter-spacing: 0.05em;
+  margin-bottom: 8px;
+}
+.client,
+.team {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 66px;
+  padding: 10px 16px;
+  border: 1px solid var(--rule);
+  background: var(--paper);
+  transition:
+    background 0.5s,
+    border-color 0.5s,
+    color 0.5s;
+}
+.client strong,
+.team strong {
+  font-size: 17px;
+  font-weight: 600;
+  letter-spacing: -0.025em;
+  line-height: 1.25;
+}
+.client > span,
+.team > span {
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--muted);
+  margin-top: 5px;
+  transition: color 0.5s;
+}
+.client[data-active='true'] {
+  background: var(--ink);
+  color: var(--paper);
+  border-color: var(--ink);
+}
+.client[data-active='true'] > span {
+  color: #d2d1cc;
+}
+.team[data-active='true'] {
+  border-color: var(--accent);
+  box-shadow: inset 3px 0 var(--accent);
+}
+.profile {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 22px 18px 0;
+  background: var(--ink);
+  color: var(--paper);
+  border: 1px solid var(--ink);
+  transition: box-shadow 0.62s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+.profile[data-active='true'] {
+  box-shadow:
+    0 0 0 1px var(--accent),
+    0 0 26px #7441e82e;
+}
+.profileKicker {
+  font: 12px/1.5 var(--mono);
+  letter-spacing: 0.05em;
+  color: #b0afaa;
+}
+.portrait {
+  position: relative;
+  width: 92px;
+  height: 92px;
+  margin: 22px 0 16px;
+  overflow: hidden;
+  border-radius: 50%;
+  border: 1px solid #ffffff50;
+}
+.portrait img {
+  object-fit: cover;
+  object-position: 54% 45%;
+}
+.profile > strong {
+  font-size: 25px;
+  font-weight: 650;
+  letter-spacing: -0.045em;
+}
+.role {
+  font-size: 13px;
+  color: #b0afaa;
+  margin-top: 7px;
+}
+.phase {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 58px;
+  margin-top: 22px;
+  border-top: 1px solid #ffffff30;
+  font-size: 12px;
+  width: calc(100% + 36px);
+  padding: 10px 12px;
+}
+.statusDot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--accent);
+  flex-shrink: 0;
+}
+.signal {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: visible;
+}
+.connection {
+  fill: none;
+  stroke: var(--ink);
+  opacity: 0.28;
+  stroke-width: 1.1;
+  stroke-dasharray: 2 5;
+  stroke-linecap: round;
+}
+.caption {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  border-top: 1px solid var(--rule);
+  margin-top: 28px;
+  padding-top: 18px;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.6;
+}
+.caption button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  min-height: 44px;
+  padding: 8px 12px;
+  border: 1px solid var(--rule);
+  background: none;
+  color: var(--ink);
+  font: 12px var(--mono);
+  cursor: pointer;
+  flex-shrink: 0;
+  transition:
+    background 0.2s,
+    color 0.2s;
+}
+.caption button:hover {
+  background: var(--ink);
+  color: var(--paper);
+}
+@media (min-width: 701px) and (max-width: 1000px) {
+  .stage {
+    grid-template-columns: minmax(0, 1fr) 205px minmax(0, 1fr);
+    column-gap: 28px;
+  }
+  .client,
+  .team {
+    padding: 12px;
+    min-height: 78px;
+  }
+  .client strong,
+  .team strong {
+    font-size: 15px;
+  }
+  .client > span,
+  .team > span {
+    font-size: 12px;
+  }
+  .profile > strong {
+    font-size: 23px;
+  }
+  .profileKicker {
+    font-size: 11px;
+  }
+}
+@media (max-width: 700px) {
+  .workflow {
+    margin-bottom: 42px;
+    padding-top: 26px;
+  }
+  .heading {
+    display: block;
+    margin-bottom: 28px;
+  }
+  .heading p {
+    margin-top: 20px;
+    max-width: 420px;
+  }
+  .stage {
+    grid-template-columns: minmax(0, 1fr);
+    row-gap: 48px;
+    padding-block: 8px;
+  }
+  .clients,
+  .teams {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+  .columnLabel {
+    grid-column: 1 / -1;
+  }
+  .client,
+  .team {
+    min-height: 82px;
+    padding: 12px;
+  }
+  .client strong,
+  .team strong {
+    font-size: 15px;
+  }
+  .client > span,
+  .team > span {
+    font-size: 12px;
+  }
+  .profile {
+    width: min(320px, 100%);
+    justify-self: center;
+    display: grid;
+    grid-template-columns: 64px minmax(0, 1fr);
+    column-gap: 16px;
+    padding-top: 18px;
+  }
+  .profileKicker {
+    grid-column: 1 / -1;
+  }
+  .portrait {
+    grid-column: 1;
+    grid-row: 2 / 4;
+    width: 64px;
+    height: 64px;
+    margin: 16px 0;
+  }
+  .profile > strong {
+    grid-column: 2;
+    grid-row: 2;
+    font-size: 23px;
+    align-self: end;
+  }
+  .role {
+    grid-column: 2;
+    grid-row: 3;
+    align-self: start;
+  }
+  .phase {
+    grid-column: 1 / -1;
+    margin-left: -18px;
+    margin-top: 8px;
+    min-height: 52px;
+  }
+  .caption {
+    align-items: flex-start;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+}

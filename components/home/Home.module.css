@@ -1,0 +1,442 @@
+.home {
+  position: relative;
+  padding: 142px var(--gutter) 0;
+  min-height: 920px;
+  overflow: hidden;
+}
+.eyebrow {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  z-index: 4;
+  font: 12px var(--mono);
+  letter-spacing: 0.07em;
+}
+.plus {
+  display: inline-block;
+  margin-left: 22px;
+  font-size: 16px;
+}
+.title {
+  position: relative;
+  z-index: 2;
+  font-size: clamp(100px, 16.65vw, 285px);
+  font-weight: 900;
+  line-height: 0.82;
+  letter-spacing: -0.085em;
+  margin: 48px 0 0 -0.045em;
+  pointer-events: none;
+}
+.title > span {
+  display: block;
+  pointer-events: auto;
+}
+.title > span + span {
+  margin-top: 24px;
+  font-size: 1.06em;
+}
+.period {
+  color: var(--accent);
+}
+.portrait {
+  position: absolute;
+  z-index: 3;
+  width: 37%;
+  height: 530px;
+  right: var(--gutter);
+  top: 318px;
+  background: #cac9c5;
+  overflow: hidden;
+}
+.imageInner {
+  position: absolute;
+  inset: -14% 0;
+}
+.image {
+  object-fit: cover;
+  object-position: 54% 50%;
+}
+.imageLabel {
+  position: absolute;
+  bottom: 18px;
+  left: 18px;
+  right: 18px;
+  display: flex;
+  justify-content: space-between;
+  z-index: 2;
+  font: 12px var(--mono);
+  color: #fff;
+  text-shadow: 0 1px 5px #0008;
+}
+.cross {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  color: var(--paper);
+  font: 24px var(--mono);
+}
+.bottom {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  width: 52%;
+  padding: 40px 0 46px;
+  z-index: 4;
+}
+.intro {
+  display: flex;
+  align-items: flex-end;
+  gap: 36px;
+}
+.intro p {
+  font-size: clamp(22px, 2.2vw, 36px);
+  line-height: 1.1;
+  letter-spacing: -0.05em;
+  margin: 0;
+}
+.intro em {
+  font-style: normal;
+  color: var(--accent);
+}
+.intro > span {
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--muted);
+}
+.cta {
+  transition:
+    background 0.25s,
+    color 0.25s;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--ink);
+  color: var(--paper);
+  max-width: 280px;
+  min-height: 57px;
+  padding: 0 0 0 22px;
+  font: 12px var(--mono);
+  letter-spacing: 0.06em;
+}
+.cta:hover,
+.cta:focus-visible {
+  background: var(--accent);
+  color: white;
+}
+.cta:hover .ctaIcon,
+.cta:focus-visible .ctaIcon {
+  background: var(--paper);
+  color: var(--accent);
+}
+.ctaIcon {
+  transition:
+    background 0.25s,
+    color 0.25s;
+}
+.ctaShell {
+  width: 100%;
+  max-width: 280px;
+}
+.ctaIcon {
+  background: var(--accent);
+  width: 57px;
+  height: 57px;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}
+.ctaIcon svg {
+  transition: transform 0.25s;
+}
+.cta:hover .ctaIcon svg {
+  transform: translateX(5px);
+}
+.footer {
+  flex-wrap: wrap;
+  gap: 18px;
+  position: relative;
+  z-index: 4;
+  border-top: 1px solid var(--rule);
+  display: flex;
+  justify-content: space-between;
+  padding: 24px 0;
+  font: 12px var(--mono);
+  letter-spacing: 0.06em;
+}
+.footer > span:last-child {
+  display: flex;
+  gap: 25px;
+}
+.footer > span:last-child span {
+  font-size: 16px;
+}
+@media (min-width: 1600px) {
+  .home {
+    min-height: 1050px;
+  }
+  .portrait {
+    height: 610px;
+    top: 355px;
+  }
+  .bottom {
+    padding-top: 60px;
+  }
+}
+@media (max-width: 1150px) {
+  .home {
+    min-height: 820px;
+  }
+  .portrait {
+    top: 280px;
+    height: 450px;
+  }
+  .bottom {
+    padding-top: 44px;
+  }
+  .intro {
+    display: block;
+  }
+  .intro > span {
+    display: block;
+    margin-top: 18px;
+  }
+  .title {
+    margin-top: 50px;
+  }
+  .footer {
+    margin-top: 15px;
+  }
+}
+@media (max-width: 760px) {
+  .home {
+    padding-top: 110px;
+    min-height: 0;
+  }
+  .eyebrow {
+    font-size: 12px;
+    letter-spacing: 0;
+  }
+  .eyebrow > span:first-child {
+    max-width: 150px;
+  }
+  .plus {
+    margin-left: 4px;
+  }
+  .title {
+    font-size: 16.6vw;
+    margin-top: 40px;
+    line-height: 0.88;
+  }
+  .title > span + span {
+    margin-top: 12px;
+    font-size: 1.22em;
+  }
+  .portrait {
+    position: relative;
+    width: 72%;
+    height: 390px;
+    top: auto;
+    right: auto;
+    margin: -6vw 0 0 auto;
+    z-index: 1;
+  }
+  .bottom {
+    width: 100%;
+    margin-top: -45px;
+    padding: 0 0 30px;
+    gap: 28px;
+  }
+  .intro {
+    background: var(--paper);
+    width: 60%;
+    padding: 22px 12px 0 0;
+  }
+  .intro p {
+    font-size: 27px;
+  }
+  .intro > span {
+    font-size: 12px;
+  }
+  .cta {
+    max-width: 235px;
+  }
+  .ctaShell {
+    max-width: 235px;
+  }
+  .footer {
+    font-size: 12px;
+    gap: 12px;
+  }
+  .footer > span:last-child {
+    gap: 12px;
+  }
+  .imageLabel {
+    font-size: 12px;
+    left: 12px;
+    right: 12px;
+  }
+  .title {
+    z-index: 3;
+  }
+}
+@media (max-width: 390px) {
+  .portrait {
+    height: 330px;
+  }
+  .intro p {
+    font-size: 24px;
+  }
+  .footer {
+    font-size: 12px;
+  }
+  .eyebrow {
+    font-size: 12px;
+  }
+}
+.nameReveal {
+  display: block;
+  width: 100%;
+  border: 0;
+  padding: 0;
+  background: none;
+  color: inherit;
+  font: inherit;
+  line-height: inherit;
+  letter-spacing: inherit;
+  text-align: left;
+  cursor: pointer;
+  pointer-events: auto;
+}
+.nameLine {
+  display: block;
+  position: relative;
+  overflow: clip;
+  padding-block: 0.08em;
+  margin-block: -0.08em;
+}
+.nameLine + .nameLine {
+  margin-top: 24px;
+  font-size: 1.06em;
+}
+.nameOriginal,
+.nameRole {
+  display: block;
+  transition:
+    transform 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 0.45s;
+}
+.nameRole {
+  position: absolute;
+  top: 50%;
+  font-size: 0.58em;
+  margin-top: -0.41em;
+  left: 0;
+  color: var(--accent);
+  opacity: 0;
+  transform: translateY(115%);
+  transform-origin: left;
+}
+.nameLine + .nameLine .nameRole {
+  font-size: 0.8em;
+  transform: translateY(115%);
+}
+.nameReveal:hover .nameOriginal,
+.nameReveal:focus .nameOriginal {
+  transform: translateY(-115%);
+  opacity: 0;
+}
+.nameReveal:hover .nameRole,
+.nameReveal:focus .nameRole {
+  transform: translateY(0);
+  opacity: 1;
+}
+.nameReveal:hover .nameLine + .nameLine .nameRole,
+.nameReveal:focus .nameLine + .nameLine .nameRole {
+  font-size: 0.8em;
+  transform: translateY(0);
+}
+.title:has(.nameReveal:hover),
+.title:has(.nameReveal:focus) {
+  z-index: 5;
+}
+.portrait {
+  height: 410px;
+  top: 350px;
+}
+.imageInner {
+  inset: -4% 0;
+}
+@media (min-width: 1600px) {
+  .portrait {
+    height: 460px;
+    top: 400px;
+  }
+}
+@media (max-width: 1150px) {
+  .portrait {
+    height: 350px;
+    top: 310px;
+  }
+}
+@media (max-width: 760px) {
+  .portrait {
+    height: auto;
+    aspect-ratio: 1.15;
+    top: auto;
+    width: 82%;
+  }
+  .nameLine + .nameLine {
+    margin-top: 12px;
+    font-size: 1.22em;
+  }
+}
+
+.nameRole {
+  letter-spacing: -0.055em;
+}
+.nameRole {
+  color: var(--ink);
+}
+.portrait {
+  translate: 0 var(--portrait-drift, 0px);
+}
+.imageInner {
+  inset: -9% 0;
+}
+.cta:hover,
+.cta:focus-visible {
+  background: var(--paper);
+  color: var(--ink);
+  box-shadow: inset 0 0 0 1px var(--ink);
+}
+.cta:hover .ctaIcon,
+.cta:focus-visible .ctaIcon {
+  background: var(--ink);
+  color: var(--paper);
+}
+/* Keep the primary next step visible on shorter desktop viewports. */
+@media (min-width: 761px) and (max-height: 800px) {
+  .home {
+    padding-top: 108px;
+    min-height: 760px;
+  }
+  .title {
+    margin-top: 28px;
+    font-size: min(16.65vw, 29vh, 285px);
+  }
+  .bottom {
+    padding-top: 20px;
+    padding-bottom: 28px;
+    gap: 16px;
+  }
+  .portrait {
+    top: 300px;
+    height: 360px;
+  }
+}
+@media (min-width: 1600px) and (max-height: 800px) {
+  .bottom {
+    padding-top: 8px;
+  }
+}

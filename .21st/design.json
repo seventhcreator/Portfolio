@@ -1,0 +1,87 @@
+{
+  "version": 1,
+  "project": {
+    "name": "santiago-velez-portfolio",
+    "productType": null,
+    "stack": [
+      "nextjs",
+      "react"
+    ]
+  },
+  "sources": {
+    "tokens": [
+      "app/globals.css"
+    ],
+    "components": [],
+    "assets": [
+      "public/images"
+    ],
+    "instructions": [
+      "AGENTS.md"
+    ]
+  },
+  "design": {
+    "colorMode": "light",
+    "colors": {
+      "--accent": {
+        "value": "#7441e8",
+        "source": "app/globals.css"
+      },
+      "--muted": {
+        "value": "#62615b",
+        "source": "app/globals.css"
+      }
+    },
+    "typography": {},
+    "spacing": {
+      "--gutter": {
+        "value": "clamp(24px, 4.4vw, 88px)",
+        "source": "app/globals.css"
+      }
+    },
+    "radius": {},
+    "shadows": {},
+    "motion": {},
+    "density": "unknown"
+  },
+  "components": {
+    "installed": [],
+    "preferredPrimitives": [],
+    "patterns": []
+  },
+  "constraints": {
+    "must": [],
+    "avoid": []
+  },
+  "decisions": [
+    "Keep the existing monochrome editorial identity with violet as a selective accent, not the default hover color.",
+    "Use the established translucent glass material for toolkit and biography, with hand-drawn marker strokes only on requested copy.",
+    "Use black name-to-role reveal, monochrome inversions, underlines, arrow movement and rotation for varied feedback.",
+    "Experience uses accessible button disclosures with reversible CSS grid expansion; preserve the rotating border and SVG plus without clipping.",
+    "Creation dialog artwork and demo recordings are copied from the original Framer portfolio; JobHub remains unchanged.",
+    "Place the original Framer client-request workflow before the Projects counters; preserve its phase engine while using compact editorial cards and measured responsive connections."
+  ],
+  "evidence": [
+    {
+      "fact": "design.colorMode:light",
+      "source": "app/globals.css"
+    },
+    {
+      "fact": "design.tokens",
+      "source": "app/globals.css"
+    },
+    {
+      "fact": "project.instructions",
+      "source": "AGENTS.md"
+    },
+    {
+      "fact": "project.stack:nextjs",
+      "source": "package.json"
+    },
+    {
+      "fact": "project.stack:react",
+      "source": "package.json"
+    }
+  ],
+  "generatedAt": "2026-11-02T13:10:05.537Z"
+}

@@ -1,0 +1,149 @@
+.header {
+  position: fixed;
+  inset: 0 0 auto;
+  z-index: 40;
+  height: 88px;
+  padding: 0 var(--gutter);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--paper);
+  border-bottom: 1px solid var(--rule);
+}
+.wordmark {
+  font-size: 34px;
+  letter-spacing: -3px;
+  font-weight: 900;
+  line-height: 1;
+  min-width: 80px;
+}
+.wordmark span {
+  color: var(--accent);
+}
+.desktop {
+  display: flex;
+  gap: 36px;
+}
+.desktop a {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  height: 44px;
+  font-size: 16px;
+  font-weight: 600;
+}
+.desktop sup {
+  font: 12px var(--mono);
+  color: var(--muted);
+  align-self: flex-start;
+  margin-top: 10px;
+}
+.desktop a:after {
+  content: '';
+  position: absolute;
+  bottom: 2px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  transform: scaleX(0);
+  transform-origin: left;
+  background: var(--accent);
+  transition: transform 0.2s;
+}
+.desktop a:hover:after,
+.desktop a[aria-current]:after {
+  transform: scaleX(1);
+}
+.hello {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  min-height: 44px;
+  font-size: 16px;
+  font-weight: 600;
+}
+.hello svg {
+  width: 18px;
+  transition: transform 0.2s;
+}
+.hello:hover svg {
+  transform: translate(3px, -3px);
+}
+.trigger {
+  display: none;
+}
+.mobile[hidden] {
+  display: none;
+}
+.mobile {
+  position: absolute;
+  top: 88px;
+  left: 0;
+  right: 0;
+  background: var(--paper);
+  padding: 24px var(--gutter) 32px;
+  border-bottom: 1px solid var(--ink);
+  box-shadow: 0 40px 50px #10101022;
+}
+.mobile nav {
+  display: grid;
+}
+.mobile nav a {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+  padding: 17px 0;
+  border-bottom: 1px solid var(--rule);
+  font-size: 30px;
+  letter-spacing: -1px;
+}
+.mobile nav a span {
+  font: 12px var(--mono);
+  color: var(--accent);
+}
+.mobile nav a svg {
+  margin-left: auto;
+}
+.mobile p {
+  margin: 24px 0 0;
+  font: 12px var(--mono);
+  line-height: 1.6;
+}
+@media (max-width: 900px) {
+  .desktop {
+    gap: 20px;
+  }
+  .hello {
+    gap: 12px;
+  }
+}
+@media (max-width: 760px) {
+  .header {
+    height: 72px;
+  }
+  .wordmark {
+    font-size: 30px;
+  }
+  .desktop,
+  .hello {
+    display: none;
+  }
+  .trigger {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 28px;
+    min-height: 44px;
+    border: 0;
+    background: none;
+    font: 16px var(--mono);
+    color: var(--ink);
+  }
+  .trigger span {
+    font-size: 22px;
+  }
+  .mobile {
+    top: 72px;
+  }
+}
