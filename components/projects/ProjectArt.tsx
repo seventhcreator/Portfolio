@@ -72,7 +72,11 @@ export function ProjectArt({ kind }: { kind: 'dorado' | 'seoul' }) {
       </svg>
       <div className={styles.seoulType}>
         <span>SEOUL</span>
-        <span className={styles.routeArrow}>↘</span>
+        <span className={styles.routeArrow}>
+          <svg width="1em" height="1em" viewBox="0 0 64 64" fill="none" focusable="false">
+            <path d="M12 12 52 52M24 52h28V24" stroke="currentColor" strokeWidth="7" />
+          </svg>
+        </span>
         <span>MEDELLÍN</span>
       </div>
       <div className={styles.artFoot}>
