@@ -459,7 +459,7 @@
 }
 .facts strong span {
   color: var(--paper);
-  font-size: 0.6em;
+  font-size: 1em;
 }
 .facts small {
   display: block;

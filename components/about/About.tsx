@@ -105,9 +105,9 @@ export function About() {
       </div>
       <div className={styles.toolkit} data-reveal>
         <div>
-          <span className="micro">A FEW THINGS I BRING</span>
+          <span className="micro">SKILLS</span>
           <h3>
-            Curiosity.
+            Action.
             <br />
             With a toolkit.
           </h3>

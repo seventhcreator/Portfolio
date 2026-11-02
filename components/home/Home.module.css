@@ -56,25 +56,6 @@
   object-fit: cover;
   object-position: 54% 50%;
 }
-.imageLabel {
-  position: absolute;
-  bottom: 18px;
-  left: 18px;
-  right: 18px;
-  display: flex;
-  justify-content: space-between;
-  z-index: 2;
-  font: 12px var(--mono);
-  color: #fff;
-  text-shadow: 0 1px 5px #0008;
-}
-.cross {
-  position: absolute;
-  top: 18px;
-  right: 18px;
-  color: var(--paper);
-  font: 24px var(--mono);
-}
 .bottom {
   position: relative;
   display: flex;
@@ -270,11 +251,6 @@
   }
   .footer > span:last-child {
     gap: 12px;
-  }
-  .imageLabel {
-    font-size: 12px;
-    left: 12px;
-    right: 12px;
   }
   .title {
     z-index: 3;

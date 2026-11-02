@@ -45,12 +45,6 @@ export function Home() {
             className={styles.image}
           />
         </div>
-        <div className={styles.imageLabel}>
-          <span>A HUMAN CONNECTION.</span>
-        </div>
-        <span className={styles.cross} aria-hidden="true">
-          +
-        </span>
       </div>
       <div className={styles.bottom}>
         <div className={styles.intro} data-hero-reveal>

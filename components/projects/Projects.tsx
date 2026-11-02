@@ -125,10 +125,14 @@ export function Projects() {
                   </button>
                 </h3>
                 <p>{project.summary}</p>
-                <div className={styles.cardResult}>
-                  <strong>{project.cardResult.value}</strong>
-                  <span>{project.cardResult.label}</span>
-                </div>
+                <dl className={styles.cardResults} aria-label="Project outcomes">
+                  {project.outcomes.map((outcome) => (
+                    <div className={styles.cardResult} key={outcome.label}>
+                      <dt>{outcome.label}</dt>
+                      <dd>{outcome.value}</dd>
+                    </div>
+                  ))}
+                </dl>
               </div>
               <span className={styles.category}>{project.category}</span>
             </div>

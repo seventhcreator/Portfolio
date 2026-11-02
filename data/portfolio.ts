@@ -83,7 +83,6 @@ export type Project = {
   client: string;
   category: string;
   summary: string;
-  cardResult: { value: string; label: string };
   challenge: string;
   contribution: string;
   approach: string;
@@ -102,7 +101,6 @@ export const projects: Project[] = [
     category: 'Engagement & retention',
     art: 'dorado',
     summary: 'An eight-month journey that gave players a reason to come back.',
-    cardResult: { value: '20% → 55%', label: 'Customer retention' },
     challenge:
       'Doradobet wanted to attract new players and sustain their engagement. Many newly acquired players were leaving within two months.',
     contribution:
@@ -118,7 +116,7 @@ export const projects: Project[] = [
       approach: ['eight-month leaderboard tournament', 'coordinated backlog follow-through'],
     },
     outcomes: [
-      { value: '20 → 55%', label: 'Customer retention · +35 percentage points' },
+      { value: '20% → 55%', label: 'Customer retention · +35 percentage points' },
       { value: '~26%', label: 'Average daily / monthly active-user uplift' },
       { value: '+6%', label: 'Gross gaming revenue during campaign months' },
     ],
@@ -132,8 +130,7 @@ export const projects: Project[] = [
     client: 'bb.q Chicken MF Colombia',
     category: 'Market entry & procurement',
     art: 'seoul',
-    summary: 'Helping a Korean franchise build the connections for a Colombian beginning.',
-    cardResult: { value: '70+', label: 'Raw materials sourced' },
+    summary: 'Helping a Korean giant build the connections for a Colombian beginning.',
     challenge:
       'Bringing a global franchise into a new market called for local understanding: its customers, pricing, supply chain, partners and location.',
     contribution:
@@ -148,7 +145,7 @@ export const projects: Project[] = [
     outcomes: [
       { value: '70+', label: 'Raw materials covered by local supply-chain work' },
       { value: '15+', label: 'Local collaborators connected with the brand' },
-      { value: 'Provenza', label: 'Location secured with key providers' },
+      { value: '↑ ATV', label: 'Increased average transaction value' },
     ],
     learning:
       'A meaningful market entry begins with relationships: understanding what the brand needs and finding the people who can help bring it to life locally.',
