@@ -1,5 +1,7 @@
 'use client';
 
+import { LanguageSwitch, useLanguage } from '@/components/shared/Language';
+
 import { useEffect, useRef, useState } from 'react';
 import { Arrow } from '@/components/shared/Arrow';
 import styles from './Navigation.module.css';
@@ -12,6 +14,7 @@ const links = [
 ] as const;
 
 export function Navigation() {
+  const { localize } = useLanguage();
   const [active, setActive] = useState('home');
   const [open, setOpen] = useState(false);
   const trigger = useRef<HTMLButtonElement>(null);
@@ -52,7 +55,7 @@ export function Navigation() {
     };
   }, [open]);
 
-  return (
+  return localize(
     <header className={styles.header}>
       <a className={styles.wordmark} href="#home" aria-label="Santiago Vélez, home">
         SV<span>.</span>
@@ -67,6 +70,7 @@ export function Navigation() {
           Blog
         </a>
       </nav>
+      <LanguageSwitch />
       <a className={styles.hello} href="mailto:santiagovl96@gmail.com">
         Let’s talk <Arrow />
       </a>
@@ -107,6 +111,6 @@ export function Navigation() {
         </nav>
         <p>Medellín, Colombia · Connecting people & possibility.</p>
       </div>
-    </header>
+    </header>,
   );
 }

@@ -81,6 +81,7 @@ export function WorkflowSignal({
     const observer = new ResizeObserver(measure);
     // Viewport-based grid gaps can reposition cards without resizing any observed node.
     window.addEventListener('resize', measure);
+    document.addEventListener('portfolio-language-change', measure);
     observer.observe(root);
     root.querySelectorAll('[data-workflow-node]').forEach((node) => observer.observe(node));
     let disposed = false;
@@ -91,6 +92,7 @@ export function WorkflowSignal({
     return () => {
       disposed = true;
       window.removeEventListener('resize', measure);
+      document.removeEventListener('portfolio-language-change', measure);
       observer.disconnect();
     };
   }, [stage]);

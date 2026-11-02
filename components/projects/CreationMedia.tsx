@@ -1,5 +1,7 @@
 'use client';
 
+import { useLanguage } from '@/components/shared/Language';
+
 import Image from 'next/image';
 import { useRef, useState } from 'react';
 import gsap from 'gsap';
@@ -11,6 +13,7 @@ import styles from './Projects.module.css';
 import { CreationIcon } from './CreationIcon';
 
 export function CreationMedia({ creation }: { creation: Creation }) {
+  const { localize } = useLanguage();
   const root = useRef<HTMLDivElement>(null);
   const player = useRef<HTMLVideoElement>(null);
   const [playing, setPlaying] = useState(false);
@@ -55,12 +58,12 @@ export function CreationMedia({ creation }: { creation: Creation }) {
     { scope: root, dependencies: [playing, reduced], revertOnUpdate: true },
   );
   if (!creation.image)
-    return (
+    return localize(
       <div className={styles.creationDetailMark} aria-hidden="true">
         <CreationIcon mark={creation.mark} />
-      </div>
+      </div>,
     );
-  return (
+  return localize(
     <div ref={root} className={styles.creationMedia}>
       <div
         className={styles.mediaStage}
@@ -115,6 +118,6 @@ export function CreationMedia({ creation }: { creation: Creation }) {
           </span>
         </div>
       )}
-    </div>
+    </div>,
   );
 }

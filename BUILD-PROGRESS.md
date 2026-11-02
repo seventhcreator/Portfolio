@@ -1,5 +1,11 @@
 # Build progress
 
+## English / Spanish switch — 2026-11-02
+
+Added an accessible EN / ES header control with optional local preference storage and updated document language/title. Spanish editorial copy covers sections, experience, skills, both case studies and their marker phrases, all creation dialogs, workflow labels/phases, navigation, media controls, image descriptions, clipboard feedback and motion controls. Names, figures, links and recorded demos retain their original content. Existing component state and identity are preserved; layout changes notify scroll/workflow measurements. Details: `docs/localization.md`.
+
+Verified preference after reload, both directions of switching, all five creation dialogs, complete El Dorado case-study text/markers, translated skill bricks, preserved expanded skill state, and an open mobile menu remaining open when switching. Spanish header/page checked at 320, 390, 768, 1024 and 1625px without horizontal overflow. TypeScript, lint and production build pass. Physical iPhone testing remains outside this local browser review.
+
 ## Completed local build
 
 - Phase 1: Next.js 16.4.3, React 19.3.1, TypeScript, CSS Modules, GSAP, npm lockfile, scripts, and local configuration.

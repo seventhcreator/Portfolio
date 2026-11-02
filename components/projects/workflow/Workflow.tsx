@@ -1,5 +1,7 @@
 'use client';
 
+import { useLanguage } from '@/components/shared/Language';
+
 import Image from 'next/image';
 import { useEffect, useRef, useState } from 'react';
 import { useReducedMotion } from '@/components/shared/motion-preference';
@@ -41,6 +43,7 @@ const phases = {
 };
 
 export function Workflow() {
+  const { localize } = useLanguage();
   const stage = useRef<HTMLDivElement>(null);
   const reduced = useReducedMotion();
   const [state, setState] = useState(sampleFlow(0));
@@ -62,7 +65,7 @@ export function Workflow() {
       document.removeEventListener('visibilitychange', update);
     };
   }, []);
-  return (
+  return localize(
     <figure className={styles.workflow} aria-labelledby="workflow-title" data-reveal>
       <div className={styles.heading}>
         <div>
@@ -148,6 +151,6 @@ export function Workflow() {
           </button>
         )}
       </figcaption>
-    </figure>
+    </figure>,
   );
 }

@@ -1,8 +1,13 @@
+'use client';
+
+import { useLanguage } from '@/components/shared/Language';
+
 import styles from './Projects.module.css';
 
 export function ProjectArt({ kind }: { kind: 'dorado' | 'seoul' }) {
+  const { localize } = useLanguage();
   if (kind === 'dorado')
-    return (
+    return localize(
       <div className={`${styles.art} ${styles.dorado}`} aria-hidden="true" data-parallax-art>
         <div className={styles.artMeta}>
           <span>DORADOBET / VIRTUALSOFT</span>
@@ -43,9 +48,9 @@ export function ProjectArt({ kind }: { kind: 'dorado' | 'seoul' }) {
           <span>8 MONTHS. ONE SHARED DIRECTION.</span>
           <span>ECUADOR →</span>
         </div>
-      </div>
+      </div>,
     );
-  return (
+  return localize(
     <div className={`${styles.art} ${styles.seoul}`} aria-hidden="true" data-parallax-art>
       <div className={styles.artMeta}>
         <span>BB.Q CHICKEN / COLOMBIA</span>
@@ -83,6 +88,6 @@ export function ProjectArt({ kind }: { kind: 'dorado' | 'seoul' }) {
         <span>GLOBAL AMBITION. LOCAL CONNECTION.</span>
         <span>06°14′ N / 75°35′ W</span>
       </div>
-    </div>
+    </div>,
   );
 }

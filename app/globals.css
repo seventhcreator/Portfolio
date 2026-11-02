@@ -285,3 +285,36 @@ section {
     color: inherit;
   }
 }
+.language-switch {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  padding: 2px;
+  border: 1px solid var(--rule);
+  flex-shrink: 0;
+}
+.language-switch button {
+  min-width: 40px;
+  min-height: 40px;
+  padding: 6px;
+  background: transparent;
+  border: 0;
+  color: var(--ink);
+  cursor: pointer;
+  font: 12px var(--mono);
+  transition:
+    color 0.2s,
+    background 0.2s;
+}
+.language-switch button[aria-pressed='true'] {
+  color: var(--paper);
+  background: var(--ink);
+}
+.language-switch button:hover:not([aria-pressed='true']) {
+  color: var(--accent);
+}
+@media (min-width: 761px) and (max-width: 1050px) {
+  .language-switch button {
+    min-width: 30px;
+  }
+}

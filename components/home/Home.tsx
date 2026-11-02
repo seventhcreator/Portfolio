@@ -1,9 +1,14 @@
+'use client';
+
+import { useLanguage } from '@/components/shared/Language';
+
 import Image from 'next/image';
 import { Arrow } from '@/components/shared/Arrow';
 import styles from './Home.module.css';
 
 export function Home() {
-  return (
+  const { localize } = useLanguage();
+  return localize(
     <section id="home" className={styles.home} tabIndex={-1} aria-labelledby="home-title">
       <div className={styles.eyebrow} data-hero-reveal>
         <span>CLIENT RELATIONSHIP MANAGER</span>
@@ -73,6 +78,6 @@ export function Home() {
           SCROLL TO DISCOVER <span aria-hidden="true">↓</span>
         </span>
       </div>
-    </section>
+    </section>,
   );
 }

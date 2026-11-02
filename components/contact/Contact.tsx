@@ -1,5 +1,7 @@
 'use client';
 
+import { useLanguage } from '@/components/shared/Language';
+
 import { useState } from 'react';
 import { identity } from '@/data/portfolio';
 import { Arrow } from '@/components/shared/Arrow';
@@ -8,6 +10,7 @@ import { useReducedMotion, toggleReducedMotion } from '@/components/shared/motio
 import { RevealHeading } from '@/components/shared/RevealHeading';
 
 export function Contact({ year }: { year: number }) {
+  const { localize } = useLanguage();
   const [status, setStatus] = useState('');
   const reducedMotion = useReducedMotion();
   async function copyEmail() {
@@ -18,7 +21,7 @@ export function Contact({ year }: { year: number }) {
       setStatus('Copy isn’t available here. You can select the email or use the email link.');
     }
   }
-  return (
+  return localize(
     <section id="contact" className={styles.contact} tabIndex={-1} aria-labelledby="contact-title">
       <div className="section-label">
         <span>THE NEXT CONVERSATION</span>
@@ -80,6 +83,6 @@ export function Contact({ year }: { year: number }) {
           BACK TO TOP <span aria-hidden="true">↑</span>
         </a>
       </footer>
-    </section>
+    </section>,
   );
 }

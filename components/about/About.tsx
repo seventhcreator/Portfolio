@@ -1,3 +1,7 @@
+'use client';
+
+import { useLanguage } from '@/components/shared/Language';
+
 import { experience, skillGroups } from '@/data/portfolio';
 import styles from './About.module.css';
 import { RevealHeading } from '@/components/shared/RevealHeading';
@@ -6,7 +10,8 @@ import { HighlightedText } from '@/components/shared/HighlightedText';
 import { SkillDisclosure } from './SkillDisclosure';
 
 export function About() {
-  return (
+  const { localize } = useLanguage();
+  return localize(
     <section id="about" className={styles.about} tabIndex={-1} aria-labelledby="about-title">
       <div className="section-label">
         <span>A LITTLE ABOUT ME</span>
@@ -141,6 +146,6 @@ export function About() {
           </SkillDisclosure>
         </div>
       </div>
-    </section>
+    </section>,
   );
 }

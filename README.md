@@ -26,6 +26,8 @@ Use `npm run format` to format application source and documentation. Browser ver
 
 ## Edit the portfolio
 
+The header EN / ES switch translates the interface and remembers the visitor's choice. Spanish copy lives in `data/es.ts`; update its English keys when editing the source copy. See `docs/localization.md` for the rendering rules and original-media boundaries.
+
 - `data/portfolio.ts`: experience, skills, professional case studies, personal creations, and identity data.
 - `components/home/Home.tsx`, `components/about/About.tsx`, `components/contact/Contact.tsx`: introductory, biographical, and contact copy.
 - `app/globals.css`: shared visual tokens and base styles.

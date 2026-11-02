@@ -1,5 +1,7 @@
 'use client';
 
+import { useLanguage } from '@/components/shared/Language';
+
 import { useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -9,6 +11,7 @@ import { useReducedMotion } from './motion-preference';
 gsap.registerPlugin(ScrollTrigger, useGSAP);
 
 export function Motion({ children }: { children: React.ReactNode }) {
+  const { t } = useLanguage();
   const root = useRef<HTMLDivElement>(null);
   const cursor = useRef<HTMLDivElement>(null);
   const progress = useRef<HTMLDivElement>(null);
@@ -234,6 +237,7 @@ export function Motion({ children }: { children: React.ReactNode }) {
       element?.addEventListener('toggle', refresh, true);
       element?.addEventListener('portfolio-layout-change', refresh);
       element?.addEventListener('load', refresh, true);
+      document.addEventListener('portfolio-language-change', refresh);
       document.fonts.ready.then(() => {
         if (!disposed) refresh();
       });
@@ -242,6 +246,7 @@ export function Motion({ children }: { children: React.ReactNode }) {
         element?.removeEventListener('toggle', refresh, true);
         element?.removeEventListener('portfolio-layout-change', refresh);
         element?.removeEventListener('load', refresh, true);
+        document.removeEventListener('portfolio-language-change', refresh);
         media.revert();
         restoreCounts();
       };
@@ -254,8 +259,9 @@ export function Motion({ children }: { children: React.ReactNode }) {
       <div className="scroll-progress" ref={progress} aria-hidden="true" />
       {children}
       <div className="project-cursor" ref={cursor} aria-hidden="true">
-        VIEW
-        <br />↗︎
+        {t('VIEW')}
+        <br />
+        ↗︎
       </div>
     </div>
   );

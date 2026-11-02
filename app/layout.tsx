@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import localFont from 'next/font/local';
 import './globals.css';
+import { LanguageProvider, SkipLink } from '@/components/shared/Language';
 
 const archivo = localFont({
   src: '../public/fonts/archivo-latin-variable.woff2',
@@ -38,10 +39,10 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return (
     <html lang="en">
       <body className={archivo.variable}>
-        <a className="skip-link" href="#main-content">
-          Skip to content
-        </a>
-        {children}
+        <LanguageProvider>
+          <SkipLink />
+          {children}
+        </LanguageProvider>
       </body>
     </html>
   );

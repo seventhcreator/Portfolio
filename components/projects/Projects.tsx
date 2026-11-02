@@ -1,5 +1,7 @@
 'use client';
 
+import { useLanguage } from '@/components/shared/Language';
+
 import { useRef, useState, useEffect } from 'react';
 import { projects, creations, workTotals, type Project, type Creation } from '@/data/portfolio';
 import { Arrow } from '@/components/shared/Arrow';
@@ -14,6 +16,7 @@ import { CreationIcon } from './CreationIcon';
 type Detail = { type: 'project'; value: Project } | { type: 'creation'; value: Creation };
 
 export function Projects() {
+  const { localize } = useLanguage();
   const dialog = useRef<HTMLDialogElement>(null);
   const opener = useRef<HTMLElement | null>(null);
   const [detail, setDetail] = useState<Detail | null>(null);
@@ -41,7 +44,7 @@ export function Projects() {
     opener.current?.focus({ preventScroll: true });
   }
 
-  return (
+  return localize(
     <section
       id="projects"
       className={styles.projects}
@@ -300,6 +303,6 @@ export function Projects() {
           </div>
         )}
       </dialog>
-    </section>
+    </section>,
   );
 }

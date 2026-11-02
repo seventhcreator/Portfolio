@@ -22,7 +22,7 @@
 }
 .desktop {
   display: flex;
-  gap: 36px;
+  gap: clamp(14px, 2vw, 32px);
 }
 .desktop a {
   position: relative;
@@ -124,6 +124,7 @@
   }
   .wordmark {
     font-size: 30px;
+    min-width: auto;
   }
   .desktop,
   .hello {
