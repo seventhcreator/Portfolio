@@ -255,7 +255,7 @@ export function Motion({ children }: { children: React.ReactNode }) {
       {children}
       <div className="project-cursor" ref={cursor} aria-hidden="true">
         VIEW
-        <br />↗
+        <br />↗︎
       </div>
     </div>
   );

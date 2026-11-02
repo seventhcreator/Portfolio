@@ -157,7 +157,7 @@ export type Creation = {
   category: string;
   description: string;
   detail: string;
-  mark: string;
+  mark: import('@/components/projects/CreationIcon').CreationMark;
   href?: string;
   image?: {
     src: string;
@@ -178,7 +178,7 @@ export const creations: Creation[] = [
     },
     video: '/videos/trai-demo.mp4',
     category: 'Desktop application',
-    mark: '◌',
+    mark: 'orbit',
     description: 'A little buddy that tracks your AI usage.',
     detail:
       'A system-tray companion for Codex and Claude. Refreshed every minute, it shows your remaining five-hour and weekly usage at a glance.',
@@ -193,7 +193,7 @@ export const creations: Creation[] = [
     },
     video: '/videos/dns-switch-demo.mp4',
     category: 'Utility script',
-    mark: '↔',
+    mark: 'switch',
     description: 'Your network. Your choice.',
     detail:
       'A script for changing your DNS provider on the go: Cloudflare, Google, Quad9 or your ISP.',
@@ -205,7 +205,7 @@ export const creations: Creation[] = [
       alt: 'Maelström logo centered on a dark background with violet and blue light trails',
     },
     category: 'Chrome extension',
-    mark: '✳',
+    mark: 'asterisk',
     description: 'Replace your New Tab with a customizable launchpad',
     detail:
       'An editable new-tab launchpad for your preferred platforms and source links, with a 25/5/15 focus timer.',
@@ -219,7 +219,7 @@ export const creations: Creation[] = [
       position: '50% 0%',
     },
     category: 'ReShade add-on',
-    mark: '◈',
+    mark: 'diamond',
     description: 'A different lens on a familiar world.',
     detail: 'An opinionated, curated set of visual tweaks for Crimson Desert.',
     href: 'https://www.nexusmods.com/crimsondesert/mods/532?tab=description',
@@ -227,7 +227,7 @@ export const creations: Creation[] = [
   {
     name: 'JobHub',
     category: 'Personal application',
-    mark: '⌘',
+    mark: 'command',
     description: 'A more intentional job search.',
     detail:
       'A job-hunting hub that fetches and scores positions, combined with a manual launchpad.',

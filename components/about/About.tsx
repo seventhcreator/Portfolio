@@ -71,7 +71,7 @@ export function About() {
             summary={
               <>
                 <span className={styles.roleNumber} aria-hidden="true">
-                  ↗
+                  ↗︎
                 </span>
                 <span className={styles.roleIdentity}>
                   <span className={styles.company}>

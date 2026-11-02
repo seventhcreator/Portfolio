@@ -9,6 +9,7 @@ import { RevealHeading } from '@/components/shared/RevealHeading';
 import { HighlightedText } from '@/components/shared/HighlightedText';
 import { CreationMedia } from './CreationMedia';
 import { Workflow } from './workflow/Workflow';
+import { CreationIcon } from './CreationIcon';
 
 type Detail = { type: 'project'; value: Project } | { type: 'creation'; value: Creation };
 
@@ -161,7 +162,7 @@ export function Projects() {
           >
             <span className={styles.creationIndex}>{creation.category}</span>
             <span className={styles.creationMark} data-mark={creation.name} aria-hidden="true">
-              {creation.mark}
+              <CreationIcon mark={creation.mark} />
             </span>
             <span className={styles.creationBottom}>
               <span>

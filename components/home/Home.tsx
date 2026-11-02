@@ -8,7 +8,7 @@ export function Home() {
       <div className={styles.eyebrow} data-hero-reveal>
         <span>CLIENT RELATIONSHIP MANAGER</span>
         <span>
-          MEDELLÍN, CO <span className={styles.plus}>↗</span>
+          MEDELLÍN, CO <span className={styles.plus}>↗︎</span>
         </span>
       </div>
       <h1 id="home-title" className={styles.title}>

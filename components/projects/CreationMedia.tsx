@@ -8,6 +8,7 @@ import { useReducedMotion } from '@/components/shared/motion-preference';
 import { Arrow } from '@/components/shared/Arrow';
 import type { Creation } from '@/data/portfolio';
 import styles from './Projects.module.css';
+import { CreationIcon } from './CreationIcon';
 
 export function CreationMedia({ creation }: { creation: Creation }) {
   const root = useRef<HTMLDivElement>(null);
@@ -56,7 +57,7 @@ export function CreationMedia({ creation }: { creation: Creation }) {
   if (!creation.image)
     return (
       <div className={styles.creationDetailMark} aria-hidden="true">
-        {creation.mark}
+        <CreationIcon mark={creation.mark} />
       </div>
     );
   return (

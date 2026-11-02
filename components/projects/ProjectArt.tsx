@@ -36,7 +36,7 @@ export function ProjectArt({ kind }: { kind: 'dorado' | 'seoul' }) {
         <div className={styles.doradoType}>
           <span>PATH TO</span>
           <strong>
-            EL DORADO<span>↗</span>
+            EL DORADO<span>↗︎</span>
           </strong>
         </div>
         <div className={styles.artFoot}>

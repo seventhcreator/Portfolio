@@ -144,7 +144,7 @@ export function Workflow() {
         {!reduced && (
           <button type="button" onClick={() => setPaused(!paused)} aria-pressed={paused}>
             {paused ? 'PLAY ANIMATION' : 'PAUSE ANIMATION'}
-            <span aria-hidden="true">{paused ? '↗' : 'Ⅱ'}</span>
+            <span aria-hidden="true">{paused ? '↗︎' : 'Ⅱ'}</span>
           </button>
         )}
       </figcaption>
