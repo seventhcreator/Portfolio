@@ -70,20 +70,22 @@ export function Navigation() {
           Blog
         </a>
       </nav>
-      <LanguageSwitch />
-      <a className={styles.hello} href="mailto:santiagovl96@gmail.com">
-        Let’s talk <Arrow />
-      </a>
-      <button
-        className={styles.trigger}
-        ref={trigger}
-        aria-expanded={open}
-        aria-controls="mobile-navigation"
-        onClick={() => setOpen(!open)}
-      >
-        {open ? 'Close' : 'Menu'}
-        <span>{open ? '−' : '+'}</span>
-      </button>
+      <div className={styles.actions}>
+        <LanguageSwitch />
+        <a className={styles.hello} href="mailto:santiagovl96@gmail.com">
+          Let’s talk <Arrow />
+        </a>
+        <button
+          className={styles.trigger}
+          ref={trigger}
+          aria-expanded={open}
+          aria-controls="mobile-navigation"
+          onClick={() => setOpen(!open)}
+        >
+          {open ? 'Close' : 'Menu'}
+          <span>{open ? '−' : '+'}</span>
+        </button>
+      </div>
       <div id="mobile-navigation" className={styles.mobile} ref={menu} hidden={!open}>
         <nav aria-label="Mobile navigation">
           {links.map(([id, name]) => (

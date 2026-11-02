@@ -290,18 +290,18 @@ section {
   align-items: center;
   gap: 2px;
   padding: 2px;
-  border: 1px solid var(--rule);
+  border: 1px solid var(--ink);
   flex-shrink: 0;
 }
 .language-switch button {
-  min-width: 40px;
-  min-height: 40px;
+  min-width: 44px;
+  min-height: 44px;
   padding: 6px;
   background: transparent;
   border: 0;
   color: var(--ink);
   cursor: pointer;
-  font: 12px var(--mono);
+  font: 650 14px var(--font-archivo), Arial, sans-serif;
   transition:
     color 0.2s,
     background 0.2s;
@@ -312,9 +312,4 @@ section {
 }
 .language-switch button:hover:not([aria-pressed='true']) {
   color: var(--accent);
-}
-@media (min-width: 761px) and (max-width: 1050px) {
-  .language-switch button {
-    min-width: 30px;
-  }
 }
