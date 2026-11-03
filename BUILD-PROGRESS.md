@@ -1,5 +1,19 @@
 # Build progress
 
+## Second English annotation pass — 2026-11-02
+
+Moved the V closer behind the S in the shared monogram. English labels now read ABOUT ME and CONNECTING THE DOTS; workflow wording and punctuation follow the owner's second pass. English photo links open the local eye painting and Medellín panorama. Contact places “together.” after an explicit line break. Spanish wording remains unchanged.
+
+BE KIND and MADE WITH LOVE use a shared accessible HeartText control: the original letters form a heart on hover/focus and return on pointer leave/blur; tap toggles the effect. Uses transforms and a faint vector guide, with full/system reduced-motion support. Coordinates are rounded to prevent server/browser floating-point differences from causing hydration warnings.
+
+## English annotation pass — 2026-11-02
+
+Applied the 36 owner annotations to English only. `data/en.ts` now keeps English revisions separate from stable source keys and independently maintained Spanish copy. Locale branches preserve Spanish supporting paragraphs, biography, workflow, case-study sections and metric wording. Shared changes: smaller language control, diagonal overlapping SV monogram, and a bilingual hero location link to the owner's locally hosted Medellín panorama.
+
+Expanded the English El Dorado case study using the published original: idea, eight-stop journey, eligible point activities, monthly and final prizes, campaign-period results and learning. Removed marker backgrounds from its three narrative headings in English while retaining requested phrase emphasis; Spanish remains as reviewed. The bb.q English card's third outcome now says GTM / Shaped the initial GTM strategy.
+
+TypeScript, lint and production build passed. Browser checked English copy and highlights, retained Spanish copy and original section count, five responsive widths without page overflow, the explicit pre-footing line break, and a real new-tab navigation to the 1500×1001 photo. Local changes are awaiting the owner's next review; this pass was not pushed.
+
 ## English / Spanish switch — 2026-11-02
 
 Added an accessible EN / ES header control with optional local preference storage and updated document language/title. Spanish editorial copy covers sections, experience, skills, both case studies and their marker phrases, all creation dialogs, workflow labels/phases, navigation, media controls, image descriptions, clipboard feedback and motion controls. Names, figures, links and recorded demos retain their original content. Existing component state and identity are preserved; layout changes notify scroll/workflow measurements. Details: `docs/localization.md`.

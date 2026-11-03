@@ -12,11 +12,13 @@ import { HighlightedText } from '@/components/shared/HighlightedText';
 import { CreationMedia } from './CreationMedia';
 import { Workflow } from './workflow/Workflow';
 import { CreationIcon } from './CreationIcon';
+import { elDoradoSteps } from '@/data/en';
+import { HeartText } from '@/components/shared/HeartText';
 
 type Detail = { type: 'project'; value: Project } | { type: 'creation'; value: Creation };
 
 export function Projects() {
-  const { localize } = useLanguage();
+  const { localize, locale } = useLanguage();
   const dialog = useRef<HTMLDialogElement>(null);
   const opener = useRef<HTMLElement | null>(null);
   const [detail, setDetail] = useState<Detail | null>(null);
@@ -53,7 +55,18 @@ export function Projects() {
     >
       <div className="section-label">
         <span>SELECTED WORK</span>
-        <span>IDEAS PUT INTO MOTION</span>
+        {locale === 'en' ? (
+          <a
+            href="/images/sharp-eye.webp"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="editorial-image-link"
+          >
+            KEEP A SHARP EYE.
+          </a>
+        ) : (
+          <span>IDEAS PUT INTO MOTION</span>
+        )}
       </div>
       <div className={styles.heading}>
         <RevealHeading
@@ -67,12 +80,14 @@ export function Projects() {
             </span>,
           ]}
         />
-        <p data-reveal>
-          A few shared challenges.
-          <br />A little curiosity.
-          <br />
-          Some meaningful outcomes.
-        </p>
+        {locale === 'es' && (
+          <p data-reveal>
+            A few shared challenges.
+            <br />A little curiosity.
+            <br />
+            Some meaningful outcomes.
+          </p>
+        )}
       </div>
       <Workflow />
       <div
@@ -132,8 +147,20 @@ export function Projects() {
                 <dl className={styles.cardResults} aria-label="Project outcomes">
                   {project.outcomes.map((outcome) => (
                     <div className={styles.cardResult} key={outcome.label}>
-                      <dt>{outcome.label}</dt>
-                      <dd>{outcome.value}</dd>
+                      <dt>
+                        {locale === 'en' &&
+                        project.id === 'bbq-colombia' &&
+                        outcome.value === '↑ ATV'
+                          ? 'Shaped the initial GTM strategy'
+                          : outcome.label}
+                      </dt>
+                      <dd>
+                        {locale === 'en' &&
+                        project.id === 'bbq-colombia' &&
+                        outcome.value === '↑ ATV'
+                          ? 'GTM'
+                          : outcome.value}
+                      </dd>
                     </div>
                   ))}
                 </dl>
@@ -148,11 +175,17 @@ export function Projects() {
           <span className="micro">PERSONAL CREATIONS.</span>
           <h3>Built on the side.</h3>
         </div>
-        <p>
-          Small tools, personal experiments,
-          <br />
-          and things I wanted to exist.
-        </p>
+        {locale === 'en' ? (
+          <p>
+            <HeartText text="BE KIND" />
+          </p>
+        ) : (
+          <p>
+            Small tools, personal experiments,
+            <br />
+            and things I wanted to exist.
+          </p>
+        )}
       </div>
       <div className={styles.creations}>
         {creations.map((creation) => (
@@ -224,18 +257,27 @@ export function Projects() {
                 <div className={styles.story}>
                   <div>
                     <h3>
-                      <mark className="marker">The challenge</mark>
+                      <span className={locale === 'es' ? 'marker' : undefined}>The challenge</span>
                     </h3>
                     <p>
                       <HighlightedText
                         text={detail.value.challenge}
-                        phrases={detail.value.highlights.challenge}
+                        phrases={
+                          locale === 'en' && detail.value.id === 'el-dorado'
+                            ? [
+                                ...detail.value.highlights.challenge,
+                                'attract new players and sustain their engagement.',
+                              ]
+                            : detail.value.highlights.challenge
+                        }
                       />
                     </p>
                   </div>
                   <div>
                     <h3>
-                      <mark className="marker">My contribution</mark>
+                      <span className={locale === 'es' ? 'marker' : undefined}>
+                        My contribution
+                      </span>
                     </h3>
                     <p>
                       <HighlightedText
@@ -246,7 +288,7 @@ export function Projects() {
                   </div>
                   <div>
                     <h3>
-                      <mark className="marker">The approach</mark>
+                      <span className={locale === 'es' ? 'marker' : undefined}>The approach</span>
                     </h3>
                     <p>
                       <HighlightedText
@@ -255,6 +297,16 @@ export function Projects() {
                       />
                     </p>
                   </div>
+                  {locale === 'en' &&
+                    detail.value.id === 'el-dorado' &&
+                    elDoradoSteps.map((step) => (
+                      <div key={step.title}>
+                        <h3>{step.title}</h3>
+                        <p>
+                          <HighlightedText text={step.text} phrases={step.phrases} />
+                        </p>
+                      </div>
+                    ))}
                 </div>
                 <div className={styles.outcomes}>
                   {detail.value.outcomes.map((outcome) => (

@@ -11,6 +11,7 @@ import {
   type ReactNode,
 } from 'react';
 import { spanish } from '@/data/es';
+import { english } from '@/data/en';
 
 type Locale = 'en' | 'es';
 const LanguageContext = createContext<{ locale: Locale; setLocale: (locale: Locale) => void }>({
@@ -19,8 +20,13 @@ const LanguageContext = createContext<{ locale: Locale; setLocale: (locale: Loca
 });
 
 export function translate(text: string, locale: Locale): string {
-  if (locale === 'en') return text;
   const key = text.replace(/\s+/g, ' ').trim();
+  if (locale === 'en') {
+    const result = english[key];
+    return result
+      ? `${text.match(/^\s*/)?.[0] ?? ''}${result}${text.match(/\s*$/)?.[0] ?? ''}`
+      : text;
+  }
   let result = spanish[key];
   if (!result && key.startsWith('Read about ')) result = `Conoce ${key.slice(11)}`;
   if (!result && key.startsWith('Read ') && key.endsWith(' case study'))

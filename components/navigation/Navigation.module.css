@@ -11,14 +11,31 @@
   border-bottom: 1px solid var(--rule);
 }
 .wordmark {
-  font-size: 34px;
+  position: relative;
+  display: block;
+  justify-self: start;
+  width: 58px;
+  height: 50px;
+  font-size: 36px;
   letter-spacing: -3px;
   font-weight: 900;
   line-height: 1;
-  min-width: 80px;
+  min-width: 58px;
 }
-.wordmark span {
-  color: var(--accent);
+.wordmark > span {
+  position: absolute;
+  color: var(--ink);
+}
+.brandS {
+  left: 0;
+  top: 0;
+  z-index: 2;
+  text-shadow: 1px 1px var(--paper), 0 1px var(--paper), 1px 0 var(--paper);
+}
+.brandV {
+  left: 14px;
+  top: 14px;
+  z-index: 1;
 }
 .desktop {
   display: flex;
@@ -138,7 +155,7 @@
     gap: 12px;
   }
   .wordmark {
-    font-size: 30px;
+    font-size: 34px;
     min-width: auto;
   }
   .desktop,

@@ -58,7 +58,12 @@ export function Navigation() {
   return localize(
     <header className={styles.header}>
       <a className={styles.wordmark} href="#home" aria-label="Santiago Vélez, home">
-        SV<span>.</span>
+        <span className={styles.brandS} aria-hidden="true">
+          S
+        </span>
+        <span className={styles.brandV} aria-hidden="true">
+          V
+        </span>
       </a>
       <nav className={styles.desktop} aria-label="Main navigation">
         {links.map(([id, name]) => (

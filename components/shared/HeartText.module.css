@@ -1,0 +1,58 @@
+.heartText {
+  position: relative;
+  display: inline-block;
+  width: var(--phrase-width);
+  min-width: 88px;
+  height: 44px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  font-family: var(--mono);
+  cursor: pointer;
+  vertical-align: middle;
+  flex-shrink: 0;
+}
+.heartText > span {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(calc(var(--rest-x) - 50%), -50%);
+  transition: transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: var(--letter-delay);
+}
+.outline {
+  position: absolute;
+  width: var(--outline-width);
+  height: var(--outline-height);
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) scale(0.7);
+  opacity: 0;
+  pointer-events: none;
+  transition:
+    opacity 0.4s,
+    transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.heartText:hover > span,
+.heartText:focus-visible > span,
+.heartText[data-active='true'] > span {
+  transform: translate(calc(var(--heart-x) - 50%), calc(var(--heart-y) - 50%));
+}
+.heartText:hover .outline,
+.heartText:focus-visible .outline,
+.heartText[data-active='true'] .outline {
+  opacity: 0.18;
+  transform: translate(-50%, -50%) scale(1);
+}
+:global([data-reduced-motion='true']) .heartText > span,
+:global([data-reduced-motion='true']) .outline {
+  transition: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  .heartText > span,
+  .outline {
+    transition: none;
+  }
+}

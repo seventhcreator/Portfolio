@@ -8,9 +8,10 @@ import { Arrow } from '@/components/shared/Arrow';
 import styles from './Contact.module.css';
 import { useReducedMotion, toggleReducedMotion } from '@/components/shared/motion-preference';
 import { RevealHeading } from '@/components/shared/RevealHeading';
+import { HeartText } from '@/components/shared/HeartText';
 
 export function Contact({ year }: { year: number }) {
-  const { localize } = useLanguage();
+  const { localize, locale } = useLanguage();
   const [status, setStatus] = useState('');
   const reducedMotion = useReducedMotion();
   async function copyEmail() {
@@ -24,8 +25,19 @@ export function Contact({ year }: { year: number }) {
   return localize(
     <section id="contact" className={styles.contact} tabIndex={-1} aria-labelledby="contact-title">
       <div className="section-label">
-        <span>THE NEXT CONVERSATION</span>
-        <span>THERE’S ROOM FOR A CONVERSATION.</span>
+        {locale === 'en' ? <HeartText text="MADE WITH LOVE" /> : <span>THE NEXT CONVERSATION</span>}
+        {locale === 'en' ? (
+          <a
+            href="/images/medellin-night.jpg"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="editorial-image-link"
+          >
+            050021
+          </a>
+        ) : (
+          <span>THERE’S ROOM FOR A CONVERSATION.</span>
+        )}
       </div>
       <div className={styles.heading}>
         <RevealHeading
@@ -51,11 +63,19 @@ export function Contact({ year }: { year: number }) {
         </a>
       </div>
       <div className={styles.details} data-reveal>
-        <p>
-          A shared challenge, a new possibility,
-          <br />
-          or just a conversation. I’m all ears.
-        </p>
+        {locale === 'en' ? (
+          <p>
+            My doors are always open if its about creating a better tomorrow,
+            <br />
+            together.
+          </p>
+        ) : (
+          <p>
+            A shared challenge, a new possibility,
+            <br />
+            or just a conversation. I’m all ears.
+          </p>
+        )}
         <div className={styles.emailGroup}>
           <a className={styles.email} href={`mailto:${identity.email}`}>
             {identity.email}

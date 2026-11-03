@@ -10,7 +10,7 @@ import { HighlightedText } from '@/components/shared/HighlightedText';
 import { SkillDisclosure } from './SkillDisclosure';
 
 export function About() {
-  const { localize } = useLanguage();
+  const { localize, locale } = useLanguage();
   return localize(
     <section id="about" className={styles.about} tabIndex={-1} aria-labelledby="about-title">
       <div className="section-label">
@@ -39,7 +39,15 @@ export function About() {
           <p>
             <HighlightedText
               text="Over five years across SaaS and marketing, I’ve helped connect what clients need with what teams can make possible. I listen closely, bring the right people together, and turn shared challenges into a clear way forward."
-              phrases={['connect what clients need with what teams can make possible.']}
+              phrases={
+                locale === 'en'
+                  ? [
+                      'growing and gardening accounts',
+                      'efficient resource allocation',
+                      'tailored, creative and human first solutions',
+                    ]
+                  : ['connect what clients need with what teams can make possible.']
+              }
             />
           </p>
           <p>
@@ -102,7 +110,17 @@ export function About() {
             }
           >
             <div className={styles.roleDetail} data-experience-content>
-              <h4>{item.summary}</h4>
+              <h4>
+                {locale === 'en' && item.number === '02' ? (
+                  <>
+                    Helping a global brand find its local
+                    <br />
+                    footing.
+                  </>
+                ) : (
+                  item.summary
+                )}
+              </h4>
               <p>{item.detail}</p>
             </div>
           </ExperienceDisclosure>
@@ -120,10 +138,12 @@ export function About() {
             Practical tools.
             <br />A people-first approach.
           </p>
-          <p className={styles.toolkitIntro}>
-            Led interdisciplinary teams of 5–10 across SaaS, B2B, B2C and marketing lines, threading
-            and building efficient solutions.
-          </p>
+          {locale === 'es' && (
+            <p className={styles.toolkitIntro}>
+              Led interdisciplinary teams of 5–10 across SaaS, B2B, B2C and marketing lines,
+              threading and building efficient solutions.
+            </p>
+          )}
         </div>
         <div className={styles.skills}>
           {skillGroups.map((group) => (

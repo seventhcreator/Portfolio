@@ -7,14 +7,24 @@ import { Arrow } from '@/components/shared/Arrow';
 import styles from './Home.module.css';
 
 export function Home() {
-  const { localize } = useLanguage();
+  const { localize, locale } = useLanguage();
   return localize(
     <section id="home" className={styles.home} tabIndex={-1} aria-labelledby="home-title">
       <div className={styles.eyebrow} data-hero-reveal>
         <span>CLIENT RELATIONSHIP MANAGER</span>
-        <span>
+        <a
+          href="/images/medellin-night.jpg"
+          target="_blank"
+          rel="noopener noreferrer"
+          className={styles.location}
+          aria-label={
+            locale === 'en'
+              ? 'View Medellín photograph (opens in a new tab)'
+              : 'Ver fotografía de Medellín (abre en una pestaña nueva)'
+          }
+        >
           MEDELLÍN, CO <span className={styles.plus}>↗︎</span>
-        </span>
+        </a>
       </div>
       <h1 id="home-title" className={styles.title}>
         <button
@@ -57,11 +67,13 @@ export function Home() {
             I connect <em>people</em>,<br />
             ideas & possibility.
           </p>
-          <span>
-            Client needs. Shared direction.
-            <br />
-            Thoughtful solutions.
-          </span>
+          {locale === 'es' && (
+            <span>
+              Client needs. Shared direction.
+              <br />
+              Thoughtful solutions.
+            </span>
+          )}
         </div>
         <div className={styles.ctaShell} data-hero-reveal data-magnet-zone>
           <a className={styles.cta} href="#case-studies" data-magnetic>

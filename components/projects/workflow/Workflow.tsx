@@ -43,7 +43,7 @@ const phases = {
 };
 
 export function Workflow() {
-  const { localize } = useLanguage();
+  const { localize, locale } = useLanguage();
   const stage = useRef<HTMLDivElement>(null);
   const reduced = useReducedMotion();
   const [state, setState] = useState(sampleFlow(0));
@@ -71,8 +71,18 @@ export function Workflow() {
         <div>
           <span className="micro">HOW I CONNECT THE DOTS</span>
           <h3 id="workflow-title">
-            A request. A connection.
-            <br />A way forward.
+            {locale === 'en' ? (
+              <>
+                Every conversation has an intent,
+                <br />
+                one I like to listen.
+              </>
+            ) : (
+              <>
+                A request. A connection.
+                <br />A way forward.
+              </>
+            )}
           </h3>
         </div>
         <p>Listen, translate the need, and bring the right people together to move it forward.</p>

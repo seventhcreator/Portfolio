@@ -52,3 +52,14 @@ JobHub is unchanged by the owner's explicit instruction. Future Tech remains exc
 ## Workflow source
 
 `HomeSignal.tsx` was exported read-only from the owner's Framer Work Book project on November 2, 2026. Archive: `reference/HomeSignal.framer.tsx.txt` (ignored local reference). Runtime clock, easing and ripple functions are retained in `components/projects/workflow/flow-engine.ts`. Source colors, profile glow, selectors and fixed coordinates were replaced with the current portfolio tokens and measured responsive geometry. No Framer runtime dependency was added.
+# Medellín panorama — 2026-11-02
+
+Owner-supplied `a2b743cb-2978-4206-a1d2-ddedc5cb45f6.webp` copied unchanged to `public/images/medellin-panorama.webp`. The hero location link opens the hosted asset in a new tab in either language. No image generation, editing or external hotlink is used.
+
+# Eye painting — 2026-11-02
+
+Owner-supplied `480ae7e4-a0ee-4328-ab21-227f9d24a117.webp` copied unchanged to `public/images/sharp-eye.webp`. The English KEEP A SHARP EYE label opens this hosted image in a new tab. The English 050021 label opens the existing Medellín panorama.
+
+# Medellín night photograph — 2026-11-02
+
+Owner-supplied `373cadcd363c9bfda626d15030eeff1c.jpg` copied unchanged to `public/images/medellin-night.jpg`. Replaces the panorama destination for both the hero location link and English contact postal-code link. The previous panorama asset is retained as an unused original.
