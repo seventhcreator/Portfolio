@@ -123,24 +123,22 @@ export const spanish: Record<string, string> = {
   'An eight-month journey that gave players a reason to come back.':
     'Un viaje de ocho meses que les dio a los jugadores una razón para volver.',
   'Doradobet wanted to attract new players and sustain their engagement. Many newly acquired players were leaving within two months.':
-    'Doradobet buscaba atraer nuevos jugadores y mantener su participación. Muchos de los recién llegados abandonaban la plataforma antes de cumplir dos meses.',
+    'Doradobet quería atraer a nuevos jugadores y mantener su participación. Los jugadores recién registrados usaban la plataforma de iGaming, pero muchos dejaban de jugar en menos de dos meses. El reto era darles una razón para volver después de las primeras semanas y seguir participando.',
   'As Account Manager, I turned the account owner’s concern into a brief, brought marketing and commercial teams together, facilitated the brainstorm, managed the request pipeline, and presented our joint proposal to the client.':
-    'Como gestor de cuentas, convertí la preocupación del responsable de la cuenta en un brief, reuní a los equipos de marketing y comercial, facilité la lluvia de ideas, gestioné el flujo de solicitudes y presenté nuestra propuesta conjunta al cliente.',
+    'Como gerente de cuentas, convertí la inquietud del cliente en un brief, reuní a los equipos de marketing y comercial, expliqué el problema y facilité la lluvia de ideas. Gestioné las solicitudes y le presenté a Doradobet nuestra propuesta conjunta. Mantuve el diálogo y coordiné los desarrollos del backlog de producto necesarios para avanzar.',
   'We shaped an eight-month leaderboard tournament around a thematic journey through Ecuador, from Otavalo to the Galápagos Islands. Eligible activity earned points, with monthly rewards and a final island-trip grand prize. I kept communication moving and coordinated backlog follow-through.':
-    'Diseñamos un torneo de clasificación de ocho meses en torno a un recorrido temático por Ecuador, desde Otavalo hasta las islas Galápagos. La actividad elegible sumaba puntos, con premios mensuales y un viaje a las islas como gran premio final. Mantuve la comunicación activa y coordiné el seguimiento del backlog.',
-  'leaving within two months': 'abandonaban la plataforma antes de cumplir dos meses',
+    'Con el equipo comercial diseñamos Camino a El Dorado, un torneo de ocho meses con una tabla de clasificación y un recorrido temático por Ecuador. Cada destino abrió un capítulo con recompensas que motivaban a seguir participando hasta el gran premio en las islas. Mantuve la comunicación y coordiné el seguimiento del backlog.',
   'turned the account owner’s concern into a brief':
     'convertí la preocupación del responsable de la cuenta en un brief',
   'managed the request pipeline': 'gestioné el flujo de solicitudes',
   'eight-month leaderboard tournament': 'torneo de clasificación de ocho meses',
-  'coordinated backlog follow-through': 'coordiné el seguimiento del backlog',
   'Customer retention · +35 percentage points': 'Retención de clientes · +35 puntos porcentuales',
   'Average daily / monthly active-user uplift':
     'Aumento promedio de usuarios activos diarios / mensuales',
   'Gross gaming revenue during campaign months':
     'Ingresos brutos de juego durante los meses de campaña',
   'The strongest ideas came from talented people working on a shared problem. My role was to connect the right teams and turn that conversation into something the client could act on.':
-    'Las mejores ideas surgieron de personas talentosas trabajando en un problema compartido. Mi papel fue conectar a los equipos indicados y convertir esa conversación en algo que el cliente pudiera poner en marcha.',
+    'Aprendí lo que puede pasar cuando personas talentosas trabajan en un problema común. Mi aporte fue reunir a los equipos indicados, mantener viva la conversación, impulsar los desarrollos del backlog y entregarle al cliente una propuesta que pudiera llevar a la práctica, ajustada a sus necesidades.',
   'From Seoul to Medellín': 'De Seúl a Medellín',
   'Market entry & procurement': 'Entrada al mercado y abastecimiento',
   'Helping a Korean giant build the connections for a Colombian beginning.':
@@ -306,4 +304,52 @@ export const spanish: Record<string, string> = {
   '3 stories': '3 pisos',
   'The brand’s first Colombian restaurant, in Provenza':
     'Primer restaurante de la marca en Colombia, en Provenza',
+  'The idea': 'La idea',
+  'The name drew on the colonial-era expedition of Gonzalo Pizarro and Francisco de Orellana east from Quito. The campaign itself followed a separate, thematic journey through Ecuador’s iconic places, turning a leaderboard into a story players could follow over eight months.':
+    'El nombre se inspiró en la expedición colonial de Gonzalo Pizarro y Francisco de Orellana hacia el este desde Quito. La campaña siguió un recorrido temático distinto por lugares emblemáticos de Ecuador, convirtiendo la tabla de clasificación en una historia que los jugadores podían seguir durante ocho meses.',
+  'The journey': 'El recorrido',
+  'The route began in Otavalo and continued through Quito, Cotopaxi, the Quilotoa Loop, Baños de Agua Santa, Cuenca & Cajas and Guayaquil, before reaching the Galápagos Islands. Each stop marked a new chapter, full of rewards, culminating in the island grand prize.':
+    'La ruta comenzó en Otavalo y pasó por Quito, Cotopaxi, la ruta del Quilotoa, Baños de Agua Santa, Cuenca y Cajas, y Guayaquil, antes de llegar a las islas Galápagos. Cada parada abrió un capítulo con recompensas, hasta llegar al gran premio en las islas.',
+  'How it worked': 'Cómo funcionó',
+  'Players earned points through eligible casino and sportsbook engagement, referral codes, winning streaks and account top-ups. Each month, the five leaderboard leaders received rewards including platform credit, football shirts, discount coupons, loyalty points and gift cards.':
+    'Los jugadores sumaban puntos con actividades válidas en el casino y las apuestas deportivas, códigos de referidos, rachas ganadoras y recargas de saldo. Cada mes, los cinco primeros de la tabla recibían premios como saldo en la plataforma, camisetas de fútbol, cupones de descuento, puntos de fidelidad y tarjetas de regalo.',
+  'The final rewards': 'Los premios finales',
+  'After eight months, the top five players received, in order: a three-day, two-night Galápagos trip; an iPhone 14 Plus; a PlayStation 5; $300 cash; and $200 in platform credit.':
+    'Tras ocho meses, los cinco primeros recibieron, en orden, un viaje a Galápagos de tres días y dos noches, un iPhone 14 Plus, una PlayStation 5, 300 dólares en efectivo y 200 dólares de saldo en la plataforma.',
+  'The outcome': 'El resultado',
+  'Customer retention rose from 20% to 55%, a gain of 35 percentage points. Reported campaign-period activity initially climbed by more than 35% before settling at an average daily and monthly active-user uplift of about 26%. Gross gaming revenue increased by 6% during the campaign months.':
+    'La retención de clientes pasó del 20 % al 55 %, un aumento de 35 puntos porcentuales. La actividad reportada durante la campaña subió inicialmente más del 35 % y luego se estabilizó en un aumento promedio de aproximadamente el 26 % en usuarios activos diarios y mensuales. Los ingresos brutos de juego aumentaron un 6 % durante los meses de campaña.',
+  'attract new players and sustain their engagement':
+    'atraer a nuevos jugadores y mantener su participación',
+  'leaving within two months': 'dejaban de jugar en menos de dos meses',
+  'give them a reason to return beyond their first weeks and stay involved over time':
+    'darles una razón para volver después de las primeras semanas y seguir participando',
+  'turned the account owner’s concern into a brief, brought marketing and commercial teams together':
+    'convertí la inquietud del cliente en un brief, reuní a los equipos de marketing y comercial',
+  'managed the request pipeline and presented our joint proposal to Doradobet':
+    'Gestioné las solicitudes y le presenté a Doradobet nuestra propuesta conjunta',
+  'coordinating the product-backlog developments':
+    'coordiné los desarrollos del backlog de producto',
+  'eight-month leaderboard tournament built around a thematic journey through Ecuador':
+    'un torneo de ocho meses con una tabla de clasificación y un recorrido temático por Ecuador',
+  'a new chapter with rewards': 'un capítulo con recompensas',
+  'coordinated backlog follow-through': 'coordiné el seguimiento del backlog',
+  'bringing the right teams together': 'reunir a los equipos indicados',
+  'giving the client a proposal they could act on, tailored to their needs':
+    'entregarle al cliente una propuesta que pudiera llevar a la práctica, ajustada a sus necesidades',
+  'a story players could follow over eight months':
+    'una historia que los jugadores podían seguir durante ocho meses',
+  'Each stop marked a new chapter, full of rewards, culminating in the island grand prize':
+    'Cada parada abrió un capítulo con recompensas, hasta llegar al gran premio en las islas',
+  'earned points through eligible casino and sportsbook engagement':
+    'sumaban puntos con actividades válidas en el casino y las apuestas deportivas',
+  'the five leaderboard leaders received rewards':
+    'los cinco primeros de la tabla recibían premios',
+  'the top five players received': 'los cinco primeros recibieron',
+  'a three-day, two-night Galápagos trip': 'un viaje a Galápagos de tres días y dos noches',
+  'Customer retention rose from 20% to 55%, a gain of 35 percentage points':
+    'La retención de clientes pasó del 20 % al 55 %, un aumento de 35 puntos porcentuales',
+  'average daily and monthly active-user uplift of about 26%':
+    'aumento promedio de aproximadamente el 26 % en usuarios activos diarios y mensuales',
+  'Gross gaming revenue increased by 6%': 'Los ingresos brutos de juego aumentaron un 6 %',
 };

@@ -23,8 +23,7 @@ export function Projects() {
   const dialog = useRef<HTMLDialogElement>(null);
   const opener = useRef<HTMLElement | null>(null);
   const [detail, setDetail] = useState<Detail | null>(null);
-  const isEnglishDorado =
-    locale === 'en' && detail?.type === 'project' && detail.value.id === 'el-dorado';
+  const isDorado = detail?.type === 'project' && detail.value.id === 'el-dorado';
   const isBbq = detail?.type === 'project' && detail.value.id === 'bbq-colombia';
 
   useEffect(() => {
@@ -276,9 +275,7 @@ export function Projects() {
                     <p>
                       <HighlightedText
                         text={
-                          isBbq || isEnglishDorado
-                            ? t(detail.value.challenge)
-                            : detail.value.challenge
+                          isBbq || isDorado ? t(detail.value.challenge) : detail.value.challenge
                         }
                         phrases={
                           isBbq
@@ -287,12 +284,12 @@ export function Projects() {
                                 'supply chain that could operate locally',
                                 'meet the Korean franchise’s standards',
                               ].map(t)
-                            : isEnglishDorado
+                            : isDorado
                               ? [
                                   'attract new players and sustain their engagement',
                                   'leaving within two months',
                                   'give them a reason to return beyond their first weeks and stay involved over time',
-                                ]
+                                ].map(t)
                               : detail.value.highlights.challenge
                         }
                       />
@@ -302,7 +299,7 @@ export function Projects() {
                     <p>
                       <HighlightedText
                         text={
-                          isBbq || isEnglishDorado
+                          isBbq || isDorado
                             ? t(detail.value.contribution)
                             : detail.value.contribution
                         }
@@ -314,12 +311,12 @@ export function Projects() {
                                 'prepared the go-to-market analysis',
                                 'a location that fit both the brand and the people it wanted to reach',
                               ].map(t)
-                            : isEnglishDorado
+                            : isDorado
                               ? [
                                   'turned the account owner’s concern into a brief, brought marketing and commercial teams together',
                                   'managed the request pipeline and presented our joint proposal to Doradobet',
                                   'coordinating the product-backlog developments',
-                                ]
+                                ].map(t)
                               : detail.value.highlights.contribution
                         }
                       />
@@ -328,11 +325,7 @@ export function Projects() {
                   <CaseStudyStep title="The approach">
                     <p>
                       <HighlightedText
-                        text={
-                          isBbq || isEnglishDorado
-                            ? t(detail.value.approach)
-                            : detail.value.approach
-                        }
+                        text={isBbq || isDorado ? t(detail.value.approach) : detail.value.approach}
                         phrases={
                           isBbq
                             ? [
@@ -340,23 +333,22 @@ export function Projects() {
                                 'benchmarked local competitors’ products',
                                 'preserve the original recipes and preparation standards',
                               ].map(t)
-                            : isEnglishDorado
+                            : isDorado
                               ? [
                                   'eight-month leaderboard tournament built around a thematic journey through Ecuador',
                                   'a new chapter with rewards',
                                   'coordinated backlog follow-through',
-                                ]
+                                ].map(t)
                               : detail.value.highlights.approach
                         }
                       />
                     </p>
                   </CaseStudyStep>
-                  {locale === 'en' &&
-                    detail.value.id === 'el-dorado' &&
+                  {isDorado &&
                     elDoradoSteps.map((step) => (
                       <CaseStudyStep key={step.title} title={step.title}>
                         <p>
-                          <HighlightedText text={step.text} phrases={step.phrases} />
+                          <HighlightedText text={t(step.text)} phrases={step.phrases.map(t)} />
                         </p>
                       </CaseStudyStep>
                     ))}
@@ -394,13 +386,13 @@ export function Projects() {
                             'bringing people together to make things happen',
                           ].map(t)}
                         />
-                      ) : isEnglishDorado ? (
+                      ) : isDorado ? (
                         <HighlightedText
                           text={t(detail.value.learning)}
                           phrases={[
                             'bringing the right teams together',
                             'giving the client a proposal they could act on, tailored to their needs',
-                          ]}
+                          ].map(t)}
                         />
                       ) : (
                         detail.value.learning
