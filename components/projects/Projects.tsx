@@ -54,7 +54,18 @@ export function Projects() {
       aria-labelledby="projects-title"
     >
       <div className="section-label">
-        <span>SELECTED WORK</span>
+        {locale === 'es' ? (
+          <a
+            href="/images/medellin-night.jpg"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="editorial-image-link"
+          >
+            MEDELLIN, COL
+          </a>
+        ) : (
+          <span>SELECTED WORK</span>
+        )}
         {locale === 'en' ? (
           <a
             href="/images/sharp-eye.webp"
@@ -65,7 +76,14 @@ export function Projects() {
             KEEP A SHARP EYE.
           </a>
         ) : (
-          <span>IDEAS PUT INTO MOTION</span>
+          <a
+            href="/images/sharp-eye.webp"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="editorial-image-link"
+          >
+            CURADURÍA VISUAL
+          </a>
         )}
       </div>
       <div className={styles.heading}>
@@ -80,14 +98,6 @@ export function Projects() {
             </span>,
           ]}
         />
-        {locale === 'es' && (
-          <p data-reveal>
-            A few shared challenges.
-            <br />A little curiosity.
-            <br />
-            Some meaningful outcomes.
-          </p>
-        )}
       </div>
       <Workflow />
       <div
@@ -175,17 +185,9 @@ export function Projects() {
           <span className="micro">PERSONAL CREATIONS.</span>
           <h3>Built on the side.</h3>
         </div>
-        {locale === 'en' ? (
-          <p>
-            <HeartText text="BE KIND" />
-          </p>
-        ) : (
-          <p>
-            Small tools, personal experiments,
-            <br />
-            and things I wanted to exist.
-          </p>
-        )}
+        <p>
+          <HeartText text={locale === 'en' ? 'BE KIND' : 'SE AMABLE'} />
+        </p>
       </div>
       <div className={styles.creations}>
         {creations.map((creation) => (

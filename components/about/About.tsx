@@ -20,14 +20,24 @@ export function About() {
       <div className={styles.intro}>
         <RevealHeading
           id="about-title"
-          lines={[
-            <span key="work" data-hover-word>
-              Good work starts
-            </span>,
-            <>
-              with <em data-accent>people.</em>
-            </>,
-          ]}
+          lines={
+            locale === 'es'
+              ? [
+                  'LAS BUENAS RELACIONES',
+                  'EMPIEZAN',
+                  <>
+                    CON <em data-accent>PERSONAS</em>
+                  </>,
+                ]
+              : [
+                  <span key="work" data-hover-word>
+                    Good work starts
+                  </span>,
+                  <>
+                    with <em data-accent>people.</em>
+                  </>,
+                ]
+          }
         />
         <div className={styles.bio} data-reveal>
           <p>
@@ -138,12 +148,6 @@ export function About() {
             Practical tools.
             <br />A people-first approach.
           </p>
-          {locale === 'es' && (
-            <p className={styles.toolkitIntro}>
-              Led interdisciplinary teams of 5–10 across SaaS, B2B, B2C and marketing lines,
-              threading and building efficient solutions.
-            </p>
-          )}
         </div>
         <div className={styles.skills}>
           {skillGroups.map((group) => (

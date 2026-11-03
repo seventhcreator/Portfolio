@@ -26,18 +26,14 @@ export function Contact({ year }: { year: number }) {
     <section id="contact" className={styles.contact} tabIndex={-1} aria-labelledby="contact-title">
       <div className="section-label">
         {locale === 'en' ? <HeartText text="MADE WITH LOVE" /> : <span>THE NEXT CONVERSATION</span>}
-        {locale === 'en' ? (
-          <a
-            href="/images/medellin-night.jpg"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="editorial-image-link"
-          >
-            050021
-          </a>
-        ) : (
-          <span>THERE’S ROOM FOR A CONVERSATION.</span>
-        )}
+        <a
+          href="/images/medellin-night.jpg"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="editorial-image-link"
+        >
+          050021
+        </a>
       </div>
       <div className={styles.heading}>
         <RevealHeading
@@ -70,11 +66,7 @@ export function Contact({ year }: { year: number }) {
             together.
           </p>
         ) : (
-          <p>
-            A shared challenge, a new possibility,
-            <br />
-            or just a conversation. I’m all ears.
-          </p>
+          <p>Mis puertas siempre están abiertas para construir un mejor mañana, para todos.</p>
         )}
         <div className={styles.emailGroup}>
           <a className={styles.email} href={`mailto:${identity.email}`}>

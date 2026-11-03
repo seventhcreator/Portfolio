@@ -79,13 +79,15 @@ export function Workflow() {
               </>
             ) : (
               <>
-                A request. A connection.
-                <br />A way forward.
+                CADA CONVERSACIÓN TIENE UNA INTENCIÓN,
+                <br />Y YO LA SÉ ESCUCHAR
               </>
             )}
           </h3>
         </div>
-        <p>Listen, translate the need, and bring the right people together to move it forward.</p>
+        {locale === 'en' && (
+          <p>Listen, translate the need, and bring the right people together to move it forward.</p>
+        )}
       </div>
       <div className={styles.stage} ref={stage} data-phase={reduced ? 'static' : state.phase}>
         <WorkflowSignal

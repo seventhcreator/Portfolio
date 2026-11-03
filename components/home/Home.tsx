@@ -67,13 +67,6 @@ export function Home() {
             I connect <em>people</em>,<br />
             ideas & possibility.
           </p>
-          {locale === 'es' && (
-            <span>
-              Client needs. Shared direction.
-              <br />
-              Thoughtful solutions.
-            </span>
-          )}
         </div>
         <div className={styles.ctaShell} data-hero-reveal data-magnet-zone>
           <a className={styles.cta} href="#case-studies" data-magnetic>
