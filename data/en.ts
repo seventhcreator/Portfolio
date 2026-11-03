@@ -32,6 +32,16 @@ export const english: Record<string, string> = {
     'Together with the commercial team, we shaped Path to El Dorado: an eight-month leaderboard tournament built around a thematic journey through Ecuador. Each destination became a new chapter with rewards, creating a reason to keep participating until the final island grand prize. I kept communication moving and coordinated backlog follow-through.',
   'The strongest ideas came from talented people working on a shared problem. My role was to connect the right teams and turn that conversation into something the client could act on.':
     'I learned what happens when talented people work on a shared problem. My contribution was bringing the right teams together, keeping the conversation alive, pushing backlog developments and giving the client a proposal they could act on, tailored to their needs.',
+  'Helping a Korean giant build the connections for a Colombian beginning.':
+    'For its South American debut, Korean franchise bb.q Chicken chose Colombia. I helped build the local supply chain, shape the go-to-market strategy, and find a home for its first restaurant in Medellín.',
+  'Bringing a global franchise into a new market called for local understanding: its customers, pricing, supply chain, partners and location.':
+    'The goal was to bring bb.q Chicken’s signature flavors to Colombia with a supply chain that could operate locally. That meant finding suppliers who could meet the Korean franchise’s standards for ingredients and preparation while keeping prices competitive and margins viable.',
+  'I helped shape go-to-market inputs, including the ideal customer profile, brand voice, local insights and pricing. I also developed supplier relationships and helped secure the Provenza location and key providers.':
+    'I mapped the Colombian supplier market, identified key providers, and negotiated pricing and volumes. I worked with suppliers to align their processes with the franchise’s requirements for cutting, injection, marination, and delivery, then connected those steps into a coordinated supply chain. I also prepared the go-to-market analysis, covering the target customer, local dining habits, competitors, and where the brand could adapt to Colombia. That work informed the search for a location that fit both the brand and the people it wanted to reach.',
+  'The work connected the franchise’s global standards with local capabilities. I helped establish a supply chain for 70+ raw materials aligned with quality requirements and connected the brand with 15+ local collaborators.':
+    'I organized stakeholder visits to processing plants, suppliers, markets, and potential restaurant sites. Alongside those visits, I benchmarked local competitors’ products and studied Colombian food practices. The team could use those findings to decide where to adapt the offer and where to preserve the original recipes and preparation standards.',
+  'A meaningful market entry begins with relationships: understanding what the brand needs and finding the people who can help bring it to life locally.':
+    'This experience made me realize how much I love to build. I love connecting the dots, finding a way through, and bringing people together to make things happen. I’m grateful to bb.q Chicken for trusting my judgment and giving me the room to put my ideas to work.',
 };
 
 // Expanded from the owner's published El Dorado case study, reviewed 2026-11-02.
@@ -45,21 +55,40 @@ export const elDoradoSteps = [
   {
     title: 'The journey',
     text: 'The route began in Otavalo and continued through Quito, Cotopaxi, the Quilotoa Loop, Baños de Agua Santa, Cuenca & Cajas and Guayaquil, before reaching the Galápagos Islands. Each stop marked a new chapter, full of rewards, culminating in the island grand prize.',
-    phrases: ['Each stop marked a new chapter'],
+    phrases: [
+      'Each stop marked a new chapter, full of rewards, culminating in the island grand prize',
+    ],
   },
   {
     title: 'How it worked',
     text: 'Players earned points through eligible casino and sportsbook engagement, referral codes, winning streaks and account top-ups. Each month, the five leaderboard leaders received rewards including platform credit, football shirts, discount coupons, loyalty points and gift cards.',
-    phrases: ['Players earned points', 'the five leaderboard leaders received rewards'],
+    phrases: [
+      'earned points through eligible casino and sportsbook engagement',
+      'the five leaderboard leaders received rewards',
+    ],
   },
   {
     title: 'The final rewards',
     text: 'After eight months, the top five players received, in order: a three-day, two-night Galápagos trip; an iPhone 14 Plus; a PlayStation 5; $300 cash; and $200 in platform credit.',
-    phrases: ['a three-day, two-night Galápagos trip'],
+    phrases: ['the top five players received', 'a three-day, two-night Galápagos trip'],
   },
   {
     title: 'The outcome',
     text: 'Customer retention rose from 20% to 55%, a gain of 35 percentage points. Reported campaign-period activity initially climbed by more than 35% before settling at an average daily and monthly active-user uplift of about 26%. Gross gaming revenue increased by 6% during the campaign months.',
-    phrases: ['20% to 55%', 'about 26%', '6% during the campaign months'],
+    phrases: [
+      'Customer retention rose from 20% to 55%, a gain of 35 percentage points',
+      'average daily and monthly active-user uplift of about 26%',
+      'Gross gaming revenue increased by 6%',
+    ],
   },
+];
+
+export const bbqLaunch =
+  'Provenza gave the brand a location in one of Medellín’s best-known dining districts, close to the audience it wanted to reach. bb.q Chicken opened a three-story restaurant there, supported by a local supply chain built around the franchise’s recipes, competitive pricing, and viable margins.';
+
+export const bbqOutcomes = [
+  { value: '70+', label: 'Supplies integrated into the local supply chain' },
+  { value: '15+', label: 'Local collaborators brought into the launch' },
+  { value: 'GTM', label: 'Initial Colombian go-to-market strategy shaped' },
+  { value: '3 stories', label: 'The brand’s first Colombian restaurant, in Provenza' },
 ];

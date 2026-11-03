@@ -410,16 +410,69 @@
   font-size: 12px;
 }
 .story {
-  display: grid;
-  gap: 35px;
   margin: 45px 0;
+  border-bottom: 1px solid var(--rule);
 }
-.story > div {
-  display: grid;
-  grid-template-columns: 180px minmax(0, 1fr);
-  gap: 30px;
-  padding-top: 26px;
+.caseStep {
   border-top: 1px solid var(--rule);
+}
+.caseTrigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  width: 100%;
+  padding: 0.8rem 0.35rem;
+  color: inherit;
+  font: inherit;
+  letter-spacing: inherit;
+  text-align: left;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  transition: color 180ms ease;
+}
+.caseTrigger svg {
+  flex: none;
+  transition: transform 320ms ease;
+}
+.caseStep[data-open='true'] .caseTrigger {
+  color: var(--accent);
+}
+.caseStep[data-open='true'] .caseTrigger svg {
+  transform: rotate(45deg);
+}
+.casePanel {
+  display: grid;
+  grid-template-rows: 0fr;
+  opacity: 0;
+  transition:
+    grid-template-rows 360ms cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 220ms ease;
+}
+.caseStep[data-open='true'] .casePanel {
+  grid-template-rows: 1fr;
+  opacity: 1;
+}
+.caseClip {
+  min-height: 0;
+  overflow: hidden;
+}
+.caseClip p {
+  padding: 0.2rem 0.35rem 1.35rem;
+  transform: translateY(6px);
+  transition: transform 360ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+.caseStep[data-open='true'] .caseClip p {
+  transform: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  .caseTrigger,
+  .caseTrigger svg,
+  .casePanel,
+  .caseClip p {
+    transition: none;
+  }
 }
 .story h3,
 .learning h3 {
@@ -705,12 +758,7 @@
   .dialogArt .artFoot {
     font-size: 12px;
   }
-  .story > div {
-    grid-template-columns: 1fr;
-    gap: 10px;
-  }
   .story {
-    gap: 26px;
     margin: 30px 0;
   }
   .story p,

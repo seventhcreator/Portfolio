@@ -32,9 +32,9 @@ export const spanish: Record<string, string> = {
   with: 'con',
   'people.': 'personas.',
   'I’m Santi. A relationship gardener, a curious mind, and a builder at heart.':
-    'Soy Santi. Le hago jardinería a las relaciones. Soy de espíritu creativo y un constructor de corazón.',
+    'Soy Santi. Le hago jardinería a las relaciones. Una mente creativa y un constructor de corazón.',
   gardener: 'jardinería',
-  curious: 'espíritu creativo',
+  curious: 'mente creativa',
   builder: 'constructor',
   'Over five years across SaaS and marketing, I’ve helped connect what clients need with what teams can make possible. I listen closely, bring the right people together, and turn shared challenges into a clear way forward.':
     'Durante cinco años en SaaS y marketing, he ayudado a conectar lo que los clientes necesitan con lo que los equipos pueden hacer posible. Escucho con atención, reúno a las personas indicadas y convierto los retos compartidos en un camino claro para avanzar.',
@@ -144,13 +144,13 @@ export const spanish: Record<string, string> = {
   'From Seoul to Medellín': 'De Seúl a Medellín',
   'Market entry & procurement': 'Entrada al mercado y abastecimiento',
   'Helping a Korean giant build the connections for a Colombian beginning.':
-    'Ayudando a un gigante coreano a construir conexiones para comenzar en Colombia.',
+    'La franquicia coreana bb.q Chicken eligió Colombia para su debut en Sudamérica. Ayudé a montar la cadena de suministro local, definir la estrategia de entrada al mercado y encontrar el local para su primer restaurante en Medellín.',
   'Bringing a global franchise into a new market called for local understanding: its customers, pricing, supply chain, partners and location.':
-    'Llevar una franquicia global a un nuevo mercado requería comprensión local: sus clientes, precios, cadena de suministro, aliados y ubicación.',
+    'El objetivo era llevar los sabores de bb.q Chicken a Colombia con una cadena de suministro local. Para lograrlo, había que encontrar proveedores que cumplieran los estándares de la franquicia coreana en ingredientes y preparación, con precios competitivos y márgenes viables.',
   'I helped shape go-to-market inputs, including the ideal customer profile, brand voice, local insights and pricing. I also developed supplier relationships and helped secure the Provenza location and key providers.':
-    'Aporté a la estrategia de entrada al mercado, incluyendo el perfil de cliente ideal, la voz de marca, el conocimiento local y los precios. También desarrollé relaciones con proveedores y ayudé a conseguir el local en Provenza y proveedores clave.',
+    'Exploré el mercado colombiano, identifiqué proveedores clave y negocié precios y volúmenes. Trabajé con ellos para alinear los procesos de corte, inyección, marinado y entrega con los estándares de la franquicia y conecté cada etapa de la cadena de suministro. También preparé el análisis de entrada al mercado: el perfil del cliente, sus hábitos de consumo, la competencia y cómo adaptar la marca a Colombia. Ese trabajo orientó la búsqueda de un local acorde con la marca y su público.',
   'The work connected the franchise’s global standards with local capabilities. I helped establish a supply chain for 70+ raw materials aligned with quality requirements and connected the brand with 15+ local collaborators.':
-    'El trabajo conectó los estándares globales de la franquicia con las capacidades locales. Ayudé a establecer una cadena de suministro para más de 70 materias primas alineadas con los requisitos de calidad y conecté a la marca con más de 15 colaboradores locales.',
+    'Organicé visitas con los socios a plantas de procesamiento, proveedores, mercados y posibles locales. Comparé los productos de la competencia local y estudié los hábitos de consumo en Colombia. Así, el equipo pudo decidir qué adaptar y dónde conservar las recetas y los métodos de preparación originales.',
   'local understanding': 'comprensión local',
   'go-to-market inputs': 'la estrategia de entrada al mercado',
   'helped secure the Provenza location': 'ayudé a conseguir el local en Provenza',
@@ -161,9 +161,9 @@ export const spanish: Record<string, string> = {
   'Local collaborators connected with the brand': 'Colaboradores locales conectados con la marca',
   'Increased average transaction value': 'Mayor valor promedio por compra',
   'A meaningful market entry begins with relationships: understanding what the brand needs and finding the people who can help bring it to life locally.':
-    'Una entrada al mercado con sentido empieza por las relaciones: entender qué necesita la marca y encontrar a las personas que pueden ayudar a darle vida localmente.',
+    'Esta experiencia me hizo ver cuánto me gusta construir. Disfruto conectar los puntos, encontrar cómo avanzar y reunir a las personas para hacer que las cosas pasen. Le agradezco a bb.q Chicken por confiar en mi criterio y darme el espacio para poner mis ideas en práctica.',
   'PERSONAL CREATIONS.': 'CREACIONES PERSONALES.',
-  'Built on the side.': 'Hecho por iniciativa propia.',
+  'Built on the side.': 'Hecho por mí:',
   'Small tools, personal experiments,': 'Pequeñas herramientas, experimentos personales,',
   'and things I wanted to exist.': 'y cosas que quería que existieran.',
   'A CLOSER LOOK / SELECTED WORK': 'EN DETALLE / TRABAJO DESTACADO',
@@ -266,4 +266,44 @@ export const spanish: Record<string, string> = {
   FULL: 'COMPLETO',
   'BACK TO TOP': 'VOLVER AL INICIO',
   VIEW: 'VER',
+  'Building the local supply chain for bb.q Chicken’s South American debut.':
+    'Una cadena de suministro local para el debut de bb.q Chicken en Sudamérica.',
+  'The opportunity': 'La oportunidad',
+  'The launch': 'La apertura',
+  'South American debut': 'debut en Sudamérica',
+  'build the local supply chain, shape the go-to-market strategy':
+    'montar la cadena de suministro local, definir la estrategia de entrada al mercado',
+  'signature flavors': 'sabores de bb.q Chicken',
+  'supply chain that could operate locally': 'cadena de suministro local',
+  'meet the Korean franchise’s standards': 'cumplieran los estándares de la franquicia coreana',
+  'mapped the Colombian supplier market, identified key providers, and negotiated pricing and volumes':
+    'Exploré el mercado colombiano, identifiqué proveedores clave y negocié precios y volúmenes',
+  'cutting, injection, marination, and delivery': 'corte, inyección, marinado y entrega',
+  'prepared the go-to-market analysis': 'preparé el análisis de entrada al mercado',
+  'a location that fit both the brand and the people it wanted to reach':
+    'un local acorde con la marca y su público',
+  'organized stakeholder visits': 'Organicé visitas con los socios',
+  'benchmarked local competitors’ products': 'Comparé los productos de la competencia local',
+  'preserve the original recipes and preparation standards':
+    'conservar las recetas y los métodos de preparación originales',
+  'Provenza gave the brand a location in one of Medellín’s best-known dining districts, close to the audience it wanted to reach. bb.q Chicken opened a three-story restaurant there, supported by a local supply chain built around the franchise’s recipes, competitive pricing, and viable margins.':
+    'Provenza le dio a la marca un lugar en una de las zonas gastronómicas más reconocidas de Medellín, cerca del público que quería alcanzar. Allí abrió un restaurante de tres pisos, con una cadena de suministro local que respetaba las recetas de la franquicia y permitía mantener precios competitivos y márgenes viables.',
+  'three-story restaurant': 'restaurante de tres pisos',
+  'local supply chain built around the franchise’s recipes, competitive pricing, and viable margins':
+    'cadena de suministro local que respetaba las recetas de la franquicia y permitía mantener precios competitivos y márgenes viables',
+  'how much I love to build': 'cuánto me gusta construir',
+  'bringing people together to make things happen':
+    'reunir a las personas para hacer que las cosas pasen',
+  'Key supplies sourced and integrated into the SC':
+    'Materias primas garantizadas en la cadena de suministro local',
+  'Local collaborators streamlined efficiently': 'Colaboradores locales conectados con la marca',
+  'Initial market research developed': 'Investigación inicial de mercado',
+  'Supplies integrated into the local supply chain':
+    'Insumos incorporados a la cadena de suministro local',
+  'Local collaborators brought into the launch': 'Colaboradores locales vinculados a la apertura',
+  'Initial Colombian go-to-market strategy shaped':
+    'Estrategia inicial de entrada al mercado colombiano',
+  '3 stories': '3 pisos',
+  'The brand’s first Colombian restaurant, in Provenza':
+    'Primer restaurante de la marca en Colombia, en Provenza',
 };

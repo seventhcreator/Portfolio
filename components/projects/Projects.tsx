@@ -5,6 +5,7 @@ import { useLanguage } from '@/components/shared/Language';
 import { useRef, useState, useEffect } from 'react';
 import { projects, creations, workTotals, type Project, type Creation } from '@/data/portfolio';
 import { Arrow } from '@/components/shared/Arrow';
+import { CaseStudyStep } from './CaseStudyStep';
 import { ProjectArt } from './ProjectArt';
 import styles from './Projects.module.css';
 import { RevealHeading } from '@/components/shared/RevealHeading';
@@ -12,16 +13,19 @@ import { HighlightedText } from '@/components/shared/HighlightedText';
 import { CreationMedia } from './CreationMedia';
 import { Workflow } from './workflow/Workflow';
 import { CreationIcon } from './CreationIcon';
-import { elDoradoSteps } from '@/data/en';
+import { bbqLaunch, bbqOutcomes, elDoradoSteps } from '@/data/en';
 import { HeartText } from '@/components/shared/HeartText';
 
 type Detail = { type: 'project'; value: Project } | { type: 'creation'; value: Creation };
 
 export function Projects() {
-  const { localize, locale } = useLanguage();
+  const { localize, locale, t } = useLanguage();
   const dialog = useRef<HTMLDialogElement>(null);
   const opener = useRef<HTMLElement | null>(null);
   const [detail, setDetail] = useState<Detail | null>(null);
+  const isEnglishDorado =
+    locale === 'en' && detail?.type === 'project' && detail.value.id === 'el-dorado';
+  const isBbq = detail?.type === 'project' && detail.value.id === 'bbq-colombia';
 
   useEffect(() => {
     const el = dialog.current;
@@ -153,24 +157,23 @@ export function Projects() {
                     <Arrow />
                   </button>
                 </h3>
-                <p>{project.summary}</p>
+                <p>
+                  {project.id === 'bbq-colombia'
+                    ? 'Building the local supply chain for bb.q Chicken’s South American debut.'
+                    : project.summary}
+                </p>
                 <dl className={styles.cardResults} aria-label="Project outcomes">
-                  {project.outcomes.map((outcome) => (
+                  {(project.id === 'bbq-colombia'
+                    ? [
+                        { value: '70+', label: 'Key supplies sourced and integrated into the SC' },
+                        { value: '15+', label: 'Local collaborators streamlined efficiently' },
+                        { value: 'GTM', label: 'Initial market research developed' },
+                      ]
+                    : project.outcomes
+                  ).map((outcome) => (
                     <div className={styles.cardResult} key={outcome.label}>
-                      <dt>
-                        {locale === 'en' &&
-                        project.id === 'bbq-colombia' &&
-                        outcome.value === '↑ ATV'
-                          ? 'Shaped the initial GTM strategy'
-                          : outcome.label}
-                      </dt>
-                      <dd>
-                        {locale === 'en' &&
-                        project.id === 'bbq-colombia' &&
-                        outcome.value === '↑ ATV'
-                          ? 'GTM'
-                          : outcome.value}
-                      </dd>
+                      <dt>{outcome.label}</dt>
+                      <dd>{outcome.value}</dd>
                     </div>
                   ))}
                 </dl>
@@ -252,66 +255,128 @@ export function Projects() {
             </h2>
             {detail.type === 'project' ? (
               <>
-                <p className={styles.dialogIntro}>{detail.value.summary}</p>
+                <p className={styles.dialogIntro}>
+                  {isBbq ? (
+                    <HighlightedText
+                      text={t(detail.value.summary)}
+                      phrases={[
+                        'South American debut',
+                        'build the local supply chain, shape the go-to-market strategy',
+                      ].map(t)}
+                    />
+                  ) : (
+                    detail.value.summary
+                  )}
+                </p>
                 <div className={styles.dialogArt}>
                   <ProjectArt kind={detail.value.art} />
                 </div>
                 <div className={styles.story}>
-                  <div>
-                    <h3>
-                      <span className={locale === 'es' ? 'marker' : undefined}>The challenge</span>
-                    </h3>
+                  <CaseStudyStep title={isBbq ? 'The opportunity' : 'The challenge'}>
                     <p>
                       <HighlightedText
-                        text={detail.value.challenge}
+                        text={
+                          isBbq || isEnglishDorado
+                            ? t(detail.value.challenge)
+                            : detail.value.challenge
+                        }
                         phrases={
-                          locale === 'en' && detail.value.id === 'el-dorado'
+                          isBbq
                             ? [
-                                ...detail.value.highlights.challenge,
-                                'attract new players and sustain their engagement.',
-                              ]
-                            : detail.value.highlights.challenge
+                                'signature flavors',
+                                'supply chain that could operate locally',
+                                'meet the Korean franchise’s standards',
+                              ].map(t)
+                            : isEnglishDorado
+                              ? [
+                                  'attract new players and sustain their engagement',
+                                  'leaving within two months',
+                                  'give them a reason to return beyond their first weeks and stay involved over time',
+                                ]
+                              : detail.value.highlights.challenge
                         }
                       />
                     </p>
-                  </div>
-                  <div>
-                    <h3>
-                      <span className={locale === 'es' ? 'marker' : undefined}>
-                        My contribution
-                      </span>
-                    </h3>
+                  </CaseStudyStep>
+                  <CaseStudyStep title="My contribution">
                     <p>
                       <HighlightedText
-                        text={detail.value.contribution}
-                        phrases={detail.value.highlights.contribution}
+                        text={
+                          isBbq || isEnglishDorado
+                            ? t(detail.value.contribution)
+                            : detail.value.contribution
+                        }
+                        phrases={
+                          isBbq
+                            ? [
+                                'mapped the Colombian supplier market, identified key providers, and negotiated pricing and volumes',
+                                'cutting, injection, marination, and delivery',
+                                'prepared the go-to-market analysis',
+                                'a location that fit both the brand and the people it wanted to reach',
+                              ].map(t)
+                            : isEnglishDorado
+                              ? [
+                                  'turned the account owner’s concern into a brief, brought marketing and commercial teams together',
+                                  'managed the request pipeline and presented our joint proposal to Doradobet',
+                                  'coordinating the product-backlog developments',
+                                ]
+                              : detail.value.highlights.contribution
+                        }
                       />
                     </p>
-                  </div>
-                  <div>
-                    <h3>
-                      <span className={locale === 'es' ? 'marker' : undefined}>The approach</span>
-                    </h3>
+                  </CaseStudyStep>
+                  <CaseStudyStep title="The approach">
                     <p>
                       <HighlightedText
-                        text={detail.value.approach}
-                        phrases={detail.value.highlights.approach}
+                        text={
+                          isBbq || isEnglishDorado
+                            ? t(detail.value.approach)
+                            : detail.value.approach
+                        }
+                        phrases={
+                          isBbq
+                            ? [
+                                'organized stakeholder visits',
+                                'benchmarked local competitors’ products',
+                                'preserve the original recipes and preparation standards',
+                              ].map(t)
+                            : isEnglishDorado
+                              ? [
+                                  'eight-month leaderboard tournament built around a thematic journey through Ecuador',
+                                  'a new chapter with rewards',
+                                  'coordinated backlog follow-through',
+                                ]
+                              : detail.value.highlights.approach
+                        }
                       />
                     </p>
-                  </div>
+                  </CaseStudyStep>
                   {locale === 'en' &&
                     detail.value.id === 'el-dorado' &&
                     elDoradoSteps.map((step) => (
-                      <div key={step.title}>
-                        <h3>{step.title}</h3>
+                      <CaseStudyStep key={step.title} title={step.title}>
                         <p>
                           <HighlightedText text={step.text} phrases={step.phrases} />
                         </p>
-                      </div>
+                      </CaseStudyStep>
                     ))}
+                  {isBbq && (
+                    <CaseStudyStep title="The launch">
+                      <p>
+                        <HighlightedText
+                          text={t(bbqLaunch)}
+                          phrases={[
+                            'Provenza',
+                            'three-story restaurant',
+                            'local supply chain built around the franchise’s recipes, competitive pricing, and viable margins',
+                          ].map(t)}
+                        />
+                      </p>
+                    </CaseStudyStep>
+                  )}
                 </div>
                 <div className={styles.outcomes}>
-                  {detail.value.outcomes.map((outcome) => (
+                  {(isBbq ? bbqOutcomes : detail.value.outcomes).map((outcome) => (
                     <div key={outcome.label}>
                       <strong>{outcome.value}</strong>
                       <span>{outcome.label}</span>
@@ -319,10 +384,29 @@ export function Projects() {
                   ))}
                 </div>
                 <div className={styles.learning}>
-                  <h3>
-                    <mark className="marker">What stays with me</mark>
-                  </h3>
-                  <p>{detail.value.learning}</p>
+                  <CaseStudyStep title="What stays with me">
+                    <p>
+                      {isBbq ? (
+                        <HighlightedText
+                          text={t(detail.value.learning)}
+                          phrases={[
+                            'how much I love to build',
+                            'bringing people together to make things happen',
+                          ].map(t)}
+                        />
+                      ) : isEnglishDorado ? (
+                        <HighlightedText
+                          text={t(detail.value.learning)}
+                          phrases={[
+                            'bringing the right teams together',
+                            'giving the client a proposal they could act on, tailored to their needs',
+                          ]}
+                        />
+                      ) : (
+                        detail.value.learning
+                      )}
+                    </p>
+                  </CaseStudyStep>
                 </div>
               </>
             ) : (

@@ -23,10 +23,10 @@ export function About() {
           lines={
             locale === 'es'
               ? [
-                  'LAS BUENAS RELACIONES',
-                  'EMPIEZAN',
+                  'Las buenas relaciones',
+                  'empiezan',
                   <>
-                    CON <em data-accent>PERSONAS</em>
+                    con <em data-accent>personas</em>
                   </>,
                 ]
               : [

@@ -79,8 +79,8 @@ export function Workflow() {
               </>
             ) : (
               <>
-                CADA CONVERSACIÓN TIENE UNA INTENCIÓN,
-                <br />Y YO LA SÉ ESCUCHAR
+                Cada conversación tiene una intención,
+                <br />y yo la sé escuchar
               </>
             )}
           </h3>
